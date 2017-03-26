@@ -1,0 +1,1774 @@
+<html>
+    <head>
+        <title>Origami-3D Animation</title>
+        <script type="text/javascript" src="http://www.x3dom.org/download/1.7/x3dom-full.js"></script>
+        <link rel="stylesheet" type="text/css" href="http://www.x3dom.org/download/1.7/x3dom.css" />
+        <link rel="stylesheet" href="origami.css" />
+        <base target="_self" />
+    </head>
+    <body>
+        <div id="nav">
+            <ul>
+                <li><a href="#header">Home</a></li>
+                <li><a href="Paper_Representations_Yoshizawa-Randlett-System.html">Paper
+                        Representations</a></li>
+                <li><a href="Operations_Yoshizawa-Randlett-System.html">Operations</a></li>
+                <li><a href="Views_Yoshizawa-Randlett-System.html#rotate">Views</a>
+                </li>
+                <li>Compound folds<ul>
+                        <li><a href="#squash_fold">Squash fold</a></li>
+                        <li><a href="#R_E_fold">Rabbit ear fold</a></li>
+                        <li><a href="#flower_fold">Petal fold on one half of a preliminary
+                            fold</a></li>
+                    </ul>
+                </li>
+                <li>Complete Example<ul>
+                        <li><a href="#Paper_Crane">Paper Crane</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div id="header">
+            <h1>Origami 3D Animation</h1>
+        </div>
+        <div id="use_directions">
+            <h1>Welcome in Origami with 3D Animation</h1>
+            <p>Use directions:</p>
+            <ul>
+                <li>You can select any 3D Animation from the navigator in the right side.</li>
+                <li>You can navigate in 3D scene with mouse freely,by which you can observe the
+                    model from any direction.</li>
+                <li>You can change the field of view in 3D scene by rotating mousewheel forwards or
+                    backwords.</li>
+                <li>At some 3D scenes you can click the buttons below, which stand for appropriate
+                    observation positions the author suggests.</li>
+            </ul>
+            <p>Copy right:</p>
+            <ul>
+                <li>All the two-dimensional pictures(diagrams in Yoshizawa-Randlett-System) come
+                    from https://commons.wikimedia.org/wiki/Main_Page.</li>
+                <li>All the X3D scenes and the design of website belong to the author.</li>
+            </ul>
+        </div>
+        <div id="section">
+            <div id="squash_fold">
+                <br />
+                <h1>Squash fold-2D Diagram</h1>
+                <img src="images/Squash-fold.png" width="500" height="150"/>
+                <h1>Squash fold-3D Animation</h1>
+                <x3d>
+                    <Scene>
+                        <!-- predefine the viewpoint of the observation -->
+                        <Viewpoint id="default" description="default_cam" position="0 6 8" orientation="-1 0 0  0.78"></Viewpoint>
+                        <!-- define the components and label them with DEFs  -->
+                        <Transform DEF="part_up">
+                            <Shape>
+                                <Appearance DEF="AP">
+                                    <TwoSidedMaterial separateBackColor="true" diffuseColor="0.1 0.1 0.9"
+                                        backDiffuseColor="0.9 0.9 0.6"/>
+                                </Appearance>
+                                <IndexedFaceSet solid="false" coordIndex="0 1 2 -1">
+                                    <Coordinate point="0 0 0 2 0 -2  -2 0 -2"/>
+                                </IndexedFaceSet>
+                            </Shape>
+                        </Transform>
+                        <Transform DEF="part_down">
+                            <Transform DEF="part_d1">
+                                <Shape>
+                                    <Appearance USE="AP"></Appearance>
+                                    <IndexedFaceSet solid="false" coordIndex="0 1 2 -1">
+                                        <Coordinate point="0 0 0  -2 0 2  0 0 2"/>
+                                    </IndexedFaceSet>
+                                </Shape>
+                            </Transform>
+                            <Transform DEF="part_d2">
+                                <Shape>
+                                    <Appearance USE="AP"></Appearance>
+                                    <IndexedFaceSet solid="false" coordIndex="0 1 2 -1">
+                                        <Coordinate point="0 0 0  0 0 2  0.8284 0 2"/>
+                                    </IndexedFaceSet>
+                                </Shape>
+                            </Transform>
+                            <Transform DEF="part_d3">
+                                <Transform DEF="part_d3_1">
+                                    <Shape>
+                                        <Appearance USE="AP"></Appearance>
+                                        <IndexedFaceSet solid="false" coordIndex="0 1 2 -1">
+                                            <Coordinate point="0 0 0  0.8284 0 2  2 0 2"/>
+                                        </IndexedFaceSet>
+                                    </Shape>
+                                </Transform>
+                            </Transform>
+                        </Transform>
+                        <Transform DEF="part_L">
+                            <Transform DEF="part_LU">
+                                <Transform DEF="part_LU1">
+                                    <Shape>
+                                        <Appearance USE="AP"></Appearance>
+                                        <IndexedFaceSet solid="false" coordIndex="0 1 2 -1">
+                                            <Coordinate point="0 0 0    -2 0 -2  -2 0 0"/>
+                                        </IndexedFaceSet>
+                                    </Shape>
+                                </Transform>
+                            </Transform>
+                            <Transform DEF="part_LD">
+                                <Transform DEF="part_LD1">
+                                    <Shape>
+                                        <Appearance USE="AP"></Appearance>
+                                        <IndexedFaceSet solid="false" coordIndex="0 1 2 -1">
+                                            <Coordinate point="0 0 0  -2 0 0   -2 0 2"/>
+                                        </IndexedFaceSet>
+                                    </Shape>
+                                </Transform>
+                            </Transform>
+                        </Transform>
+                        <Transform DEF="part_R">
+                            <Transform DEF="part_RU">
+                                <Transform DEF="part_RU1">
+                                    <Shape>
+                                        <Appearance USE="AP"></Appearance>
+                                        <IndexedFaceSet solid="false" coordIndex="0 1 2 -1">
+                                            <Coordinate point="0 0 0  2 0 0  2 0 -2"/>
+                                        </IndexedFaceSet>
+                                    </Shape>
+                                </Transform>
+                            </Transform>
+                            <Transform DEF="part_RD">
+                                <Transform DEF="part_RD1">
+                                    <Transform DEF="partRD_1">
+                                        <Shape>
+                                            <Appearance USE="AP"></Appearance>
+                                            <IndexedFaceSet solid="false" coordIndex="0 1 2 -1">
+                                                <Coordinate point="0 0 0  2 0 0.8284  2 0 0"/>
+                                            </IndexedFaceSet>
+                                        </Shape>
+                                    </Transform>
+                                    <Transform DEF="partRD_2">
+                                        <Transform DEF="partRD_2_2">
+                                            <Shape>
+                                                <Appearance USE="AP"></Appearance>
+                                                <IndexedFaceSet solid="false" coordIndex="0 1 2 -1">
+                                                    <Coordinate point="0 0 0   2 0 2  2 0 0.8284"/>
+                                                </IndexedFaceSet>
+                                            </Shape>
+                                        </Transform>
+                                    </Transform>
+                                </Transform>
+                            </Transform>
+                        </Transform>
+                        <!-- define a time trigger -->
+                        <TimeSensor DEF="time" cycleInterval="10" loop="true"/>
+                        <!-- define the key positions during the movement. Intermediate positions will be computed by interpolation -->
+                        <OrientationInterpolator DEF="move_L"
+                            key="0  0.02  0.08  0.10  0.16  0.18  0.24  0.26  0.32   1"
+                            keyvalue="0 0 0 0  0 0 0 0  -1 0 1 1.57  -1 0 1 1.57  0 0 0 0  0 0 0 0   1 0 1 1.57  1 0 1 1.57  0 0 0 0  0 0 0 0"> </OrientationInterpolator>
+                        <OrientationInterpolator DEF="move_up"
+                            key="0   0.02  0.08  0.10  0.16  0.18  0.24  0.26  0.32 0.35 0.65  1"
+                            keyvalue="0 0 0 0  0 0 0 0  -1 0 1 1.57  -1 0 1 1.57  0 0 0 0  0 0 0 0   -1 0 -1 1.57  -1 0 -1 1.57  0 0 0 0  0 0 0 0  -1 0 0 1.57 -1 0 0 1.57"> </OrientationInterpolator>
+                        <OrientationInterpolator DEF="move_R"
+                            key="0   0.02  0.08  0.10  0.16  0.18  0.24  0.26  0.32   1"
+                            keyvalue="0 0 0 0  0 0 0 0  1 0 -1 1.57  1 0 -1 1.57  0 0 0 0  0 0 0 0   -1 0 -1 1.57  -1 0 -1 1.57  0 0 0 0  0 0 0 0"> </OrientationInterpolator>
+                        <OrientationInterpolator DEF="move_down"
+                            key="0   0.02  0.08  0.10  0.16  0.18  0.24  0.26  0.32  0.35  0.65   1"
+                            keyvalue="0 0 0 0  0 0 0 0  1 0 -1 1.57  1 0 -1 1.57  0 0 0 0  0 0 0 0   1 0 1 1.57  1 0 1 1.57  0 0 0 0  0 0 0 0  1 0 0 1.57   1 0 0 1.57"> </OrientationInterpolator>
+                        <OrientationInterpolator DEF="move_RU"
+                            key="0  0.350  0.380  0.410  0.440  0.470  0.500  0.530  0.560  0.590  0.620  0.650    1"
+                            keyvalue="0 0 0 0  0 0 -1 0.0000  0 0 -1 0.3103  0 0 -1 0.5994  0 0 -1 0.8523  0 0 -1 1.0628  0 0 -1 1.2309  0 0 -1 1.3604  0 0 -1 1.4556  0 0 -1 1.5206  0 0 -1 1.5584  0 0 -1 1.5708  0 0 -1 1.5708"> </OrientationInterpolator>
+                        <OrientationInterpolator DEF="move_RU1" key="0  0.350  0.65   1"
+                            keyvalue="0 0 0 0  0 0 0 0  1 0 0 1.5708  1 0 0 1.5708"> </OrientationInterpolator>
+                        <OrientationInterpolator DEF="move_RD"
+                            key="0  0.350  0.380  0.410  0.440  0.470  0.500  0.530  0.560  0.590  0.620  0.650    1"
+                            keyvalue="0 0 0 0  0 0 -1 0.0000  0 0 -1 0.3103  0 0 -1 0.5994  0 0 -1 0.8523  0 0 -1 1.0628  0 0 -1 1.2309  0 0 -1 1.3604  0 0 -1 1.4556  0 0 -1 1.5206  0 0 -1 1.5584  0 0 -1 1.5708 0 0 -1 1.5708"> </OrientationInterpolator>
+                        <OrientationInterpolator DEF="move_RD1" key="0  0.350  0.65  1"
+                            keyvalue="0 0 0 0  0 0 0 0  -1 0 0 1.5709  -1 0 0 1.5709"> </OrientationInterpolator>
+                        <OrientationInterpolator DEF="move_LU"
+                            key="0  0.350  0.380  0.410  0.440  0.470  0.500  0.530  0.560  0.590  0.620  0.650    1"
+                            keyvalue="0 0 0 0  0 0 1 0.0000   0 0 1 0.3103   0 0 1 0.5994   0 0 1 0.8523   0 0 1 1.0628   0 0 1 1.2309   0 0 1 1.3604   0 0 1 1.4556   0 0 1 1.5206   0 0 1 1.5584   0 0 1 1.5708  0 0 1 1.5708"> </OrientationInterpolator>
+                        <OrientationInterpolator DEF="move_LU1" key="0  0.350  0.65 1"
+                            keyvalue="0 0 0 0  0 0 0 0  1 0 0 1.5708  1 0 0 1.5708"> </OrientationInterpolator>
+                        <OrientationInterpolator DEF="move_LD"
+                            key="0  0.350  0.380  0.410  0.440  0.470  0.500  0.530  0.560  0.590  0.620  0.650   1"
+                            keyvalue="0 0 0 0  0 0 1 0.0000  0 0 1 0.3103  0 0 1 0.5994  0 0 1 0.8523  0 0 1 1.0628  0 0 1 1.2309  0 0 1 1.3604  0 0 1 1.4556  0 0 1 1.5206  0 0 1 1.5584  0 0 1 1.5708  0 0 1 1.5708"> </OrientationInterpolator>
+                        <OrientationInterpolator DEF="move_LD1" key="0  0.350  0.6500  1"
+                            keyvalue="0 0 0 0  0 0 0 0  -1 0 0 1.5708  -1 0 0 1.5708"> </OrientationInterpolator>
+                        <OrientationInterpolator DEF="move_mittle1" key="0  0.70  0.8 0.85 0.95  1"
+                            keyvalue="0 0 0 0  0 0 0 0   0 0 1 1.5708 0 0 1 1.5708  0 0 1 3.14  0 0 1 3.14"> </OrientationInterpolator>
+                        <OrientationInterpolator DEF="move_mittle2" key="0  0.70  0.8 0.85 0.95  1"
+                            keyvalue="0 0 0 0  0 0 0 0  1 0 0 1.5707  1 0 0 1.5707  1 0 0 0  1 0 0 0"> </OrientationInterpolator>
+                        <OrientationInterpolator DEF="move_partd3"
+                            key="0  0.850  0.860  0.870  0.880  0.890  0.900  0.910  0.920  0.930  0.940  0.950    1"
+                            keyvalue="0 0 0 0  -0.8284  0 -2 0  -0.8284  0 -2  0.2906  -0.8284  0 -2  0.5833  -0.8284  0 -2  0.8799  -0.8284  0 -2  1.1823  -0.8284  0 -2  1.4917  -0.8284  0 -2  1.8088  -0.8284  0 -2  2.1336  -0.8284  0 -2  2.4652  -0.8284  0 -2  2.8020  -0.8284  0 -2  3.14  -0.8284  0 -2 3.14"> </OrientationInterpolator>
+                        <OrientationInterpolator DEF="move_partRD_2"
+                            key="0  0.850  0.860  0.870  0.880  0.890  0.900  0.910  0.920  0.930  0.940  0.950   1"
+                            keyvalue="0 0 0 0  2 0 0.8284 0  2 0 0.8284  0.2906  2 0 0.8284  0.5833  2 0 0.8284  0.8799  2 0 0.8284  1.1823  2 0 0.8284  1.4917  2 0 0.8284  1.8088  2 0 0.8284  2.1336  2 0 0.8284  2.4652  2 0 0.8284  2.8020  2 0 0.8284  3.14  2 0 0.8284 3.14"> </OrientationInterpolator>
+                        <!-- define the routes, along which events are propagated according to the event model-->
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_R" toField="set_fraction"></Route>
+                        <Route fromNode="move_R" fromField="value_changed" toNode="part_R" toField="rotation"></Route>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_L" toField="set_fraction"></Route>
+                        <Route fromNode="move_L" fromField="value_changed" toNode="part_L" toField="rotation"></Route>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_up" toField="set_fraction"></Route>
+                        <Route fromNode="move_up" fromField="value_changed" toNode="part_up" toField="rotation"></Route>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_down" toField="set_fraction"></Route>
+                        <Route fromNode="move_down" fromField="value_changed" toNode="part_down" toField="rotation"></Route>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_RU" toField="set_fraction"></Route>
+                        <Route fromNode="move_RU" fromField="value_changed" toNode="part_RU" toField="rotation"></Route>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_RU1" toField="set_fraction"></Route>
+                        <Route fromNode="move_RU1" fromField="value_changed" toNode="part_RU1" toField="rotation"></Route>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_RD" toField="set_fraction"></Route>
+                        <Route fromNode="move_RD" fromField="value_changed" toNode="part_RD" toField="rotation"></Route>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_RD1" toField="set_fraction"></Route>
+                        <Route fromNode="move_RD1" fromField="value_changed" toNode="part_RD1" toField="rotation"></Route>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_LU" toField="set_fraction"></Route>
+                        <Route fromNode="move_LU" fromField="value_changed" toNode="part_LU" toField="rotation"></Route>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_LU1" toField="set_fraction"></Route>
+                        <Route fromNode="move_LU1" fromField="value_changed" toNode="part_LU1" toField="rotation"></Route>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_LD" toField="set_fraction"></Route>
+                        <Route fromNode="move_LD" fromField="value_changed" toNode="part_LD" toField="rotation"></Route>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_LD1" toField="set_fraction"></Route>
+                        <Route fromNode="move_LD1" fromField="value_changed" toNode="part_LD1" toField="rotation"></Route>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_mittle1" toField="set_fraction"></Route>
+                        <Route fromNode="move_mittle1" fromField="value_changed" toNode="part_d2" toField="rotation"></Route>
+                        <Route fromNode="move_mittle1" fromField="value_changed" toNode="part_d3" toField="rotation"></Route>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_mittle2" toField="set_fraction"></Route>
+                        <Route fromNode="move_mittle2" fromField="value_changed" toNode="partRD_1" toField="rotation"></Route>
+                        <Route fromNode="move_mittle2" fromField="value_changed" toNode="partRD_2" toField="rotation"></Route>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_partd3" toField="set_fraction"></Route>
+                        <Route fromNode="move_partd3" fromField="value_changed" toNode="part_d3_1" toField="rotation"></Route>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_partRD_2" toField="set_fraction"></Route>
+                        <Route fromNode="move_partRD_2" fromField="value_changed" toNode="partRD_2_2" toField="rotation"></Route>
+                    </Scene>
+                </x3d>
+            </div>
+            <div id="R_E_fold">
+                <br />
+                <h1>Rabbit ear fold-2D Diagram</h1>
+                <img src="images/Rabbit-ear-fold.png" width="500" height="150"/>
+                <h1>Rabbit ear fold-3D Animation</h1>
+                <x3d>
+                    <Scene>
+                        <!-- predefine the viewpoint of the observation -->
+                        <Viewpoint id="default" description="default_cam" position="0 8 10" orientation="-1 0 0  0.78"></Viewpoint>
+                        <!-- define the components and label them with DEFs  -->
+                        <Transform DEF="part1">
+                            <Shape>
+                                <Appearance DEF="AP">
+                                    <TwoSidedMaterial separateBackColor="true" diffuseColor="0.1 0.1 0.9" backDiffuseColor="0.9 0.9 0.6"/>
+                                </Appearance>
+                                <IndexedFaceSet solid="false" coordIndex="0 1 2 -1">
+                                    <Coordinate point="0 0 0  0 0 4  -1.6568 0 0"/>
+                                </IndexedFaceSet>
+                            </Shape>
+                        </Transform>
+                        <Transform DEF="part2">
+                            <Shape>
+                                <Appearance USE="AP"></Appearance>
+                                <IndexedFaceSet solid="false" coordIndex="0 1 2 -1">
+                                    <Coordinate point="0 0 0  -1.6568 0 0   0 0 -4"/>
+                                </IndexedFaceSet>
+                            </Shape>
+                        </Transform>
+                        <Transform DEF="part_R" translation="-1.6568 0 0">
+                            <Transform DEF="part1_3">
+                                <Transform DEF="part2_3">
+                                    <Shape>
+                                        <Appearance USE="AP"></Appearance>
+                                        <IndexedFaceSet solid="false" coordIndex="0 1 2 -1">
+                                            <Coordinate point="0 0 0   -0.6864 0 -1.6568   1.6568 0 -4"/>
+                                        </IndexedFaceSet>
+                                    </Shape>
+                                </Transform>
+                            </Transform>
+                            <Transform DEF="part1_4">
+                                <Transform DEF="part2_4">
+                                    <Shape>
+                                        <Appearance USE="AP"></Appearance>
+                                        <IndexedFaceSet solid="false" coordIndex="0 1 2 -1">
+                                            <Coordinate point="0 0 0  1.6568 0 4  -0.6864 0 1.6568"/>
+                                        </IndexedFaceSet>
+                                    </Shape>
+                                </Transform>
+                            </Transform>
+                            <Transform DEF="part1_567">
+                                <Transform DEF="part2_567">
+                                    <Transform DEF="part1_5">
+                                        <Transform DEF="part2_5">
+                                            <Shape>
+                                                <Appearance USE="AP"></Appearance>
+                                                <IndexedFaceSet solid="false" coordIndex="0 1 2 -1">
+                                                    <Coordinate point="0 0 0  -2.3432 0 0  -1.1715 0 -1.1715"/>
+                                                </IndexedFaceSet>
+                                            </Shape>
+                                        </Transform>
+                                    </Transform>
+                                    <Transform DEF="part6">
+                                        <Shape>
+                                            <Appearance USE="AP"></Appearance>
+                                            <IndexedFaceSet solid="false" coordIndex="0 1 2 -1">
+                                                <Coordinate point="0 0 0   -0.6864 0 1.6568   -2.3432 0 0"/>
+                                            </IndexedFaceSet>
+                                        </Shape>
+                                    </Transform>
+                                    <Transform DEF="part7">
+                                        <Shape>
+                                            <Appearance USE="AP"></Appearance>
+                                            <IndexedFaceSet solid="false" coordIndex="0 1 2 -1">
+                                                <Coordinate point="0 0 0  -1.1715 0 -1.1715  -0.6864 0 -1.6568"/>
+                                            </IndexedFaceSet>
+                                        </Shape>
+                                    </Transform>
+                                </Transform>
+                            </Transform>
+                        </Transform>
+                        <Transform DEF="part8">
+                            <Shape>
+                                <Appearance USE="AP"></Appearance>
+                                <IndexedFaceSet solid="false" coordIndex="0 1 2 -1">
+                                    <Coordinate point="0 0 -4  4 0 0   0 0 4"/>
+                                </IndexedFaceSet>
+                            </Shape>
+                        </Transform>
+                        <!-- define a time trigger -->
+                        <TimeSensor DEF="time" cycleInterval="20" loop="true"/>
+                        <!-- define the key positions during the movement and the routes, along which events are propagated according to the event model-->
+                        <OrientationInterpolator DEF="move_part8" key="0  0.05  0.15  0.25  1"
+                            keyvalue="0 0 0 0   0 0 0 0   0 0 1 3.1415   0 0 0 0   0 0 0 0"></OrientationInterpolator>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_part8" toField="set_fraction"></Route>
+                        <Route fromNode="move_part8" fromField="value_changed" toNode="part8" toField="rotation"></Route>
+                        <OrientationInterpolator DEF="move_partR1" key="0  0.25  0.35  0.45  1"
+                            keyvalue="0 0 0 0  0 0 0 0  1.6568 0 -4 3.1415  0 0 0 0  0 0 0 0"></OrientationInterpolator>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_partR1" toField="set_fraction"></Route>
+                        <Route fromNode="move_partR1" fromField="value_changed" toNode="part1_3" toField="rotation"></Route>
+                        <Route fromNode="move_partR1" fromField="value_changed" toNode="part1_567" toField="rotation"></Route>
+                        <OrientationInterpolator DEF="move_partR2" key="0  0.45  0.55  0.65  1"
+                            keyvalue="0 0 0 0  0 0 0 0  -1.6568 0 -4 3.1415  0 0 0 0  0 0 0 0"></OrientationInterpolator>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_partR2" toField="set_fraction"></Route>
+                        <Route fromNode="move_partR2" fromField="value_changed" toNode="part1_4" toField="rotation"></Route>
+                        <Route fromNode="move_partR2" fromField="value_changed" toNode="part2_567" toField="rotation"></Route>
+                        <OrientationInterpolator DEF="move_part37" key="0  0.7  0.9  1"
+                            keyvalue="0 0 0 0  0 0 0 0  1.6568 0 -4 3.14  1.6568 0 -4 3.14"></OrientationInterpolator>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_part37" toField="set_fraction"></Route>
+                        <Route fromNode="move_part37" fromField="value_changed" toNode="part2_3" toField="rotation"></Route>
+                        <Route fromNode="move_part37" fromField="value_changed" toNode="part7" toField="rotation"></Route>
+                        <OrientationInterpolator DEF="move_part456"
+                            key="0  0.700  0.710  0.720  0.730  0.740  0.750  0.760  0.770  0.780  0.790  0.800  0.810  0.820  0.830  0.840  0.850  0.860  0.870  0.880  0.890  0.900  1"
+                            keyvalue="0 0 0 0  -1.6568 0 -4 0.00000  -1.6568 0 -4 0.08910  -1.6568 0 -4 0.17896  -1.6568 0 -4 0.27033  -1.6568 0 -4 0.36403  -1.6568 0 -4 0.46093  -1.6568 0 -4 0.56197  -1.6568 0 -4 0.66822  -1.6568 0 -4 0.78085  -1.6568 0 -4 0.90120  -1.6568 0 -4 1.03078  -1.6568 0 -4 1.17124  -1.6568 0 -4 1.32443  -1.6568 0 -4 1.49223  -1.6568 0 -4 1.67652  -1.6568 0 -4 1.87882  -1.6568 0 -4 2.10003  -1.6568 0 -4 2.33984  -1.6568 0 -4 2.59630  -1.6568 0 -4 2.86549  -1.6568 0 -4 3.14  -1.6568 0 -4 3.14"> </OrientationInterpolator>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_part456" toField="set_fraction"></Route>
+                        <Route fromNode="move_part456" fromField="value_changed" toNode="part2_4" toField="rotation"></Route>
+                        <Route fromNode="move_part456" fromField="value_changed" toNode="part6" toField="rotation"></Route>
+                        <Route fromNode="move_part456" fromField="value_changed" toNode="part1_5" toField="rotation"></Route>
+                        <OrientationInterpolator DEF="move_part2_5"
+                            key="0  0.700  0.710  0.720  0.730  0.740  0.750  0.760  0.770  0.780  0.790  0.800  0.810  0.820  0.830  0.840  0.850  0.860  0.870  0.880  0.890  0.900   1"
+                            keyvalue="0 0 0 0   1 0 0 0.00000  1 0 0 0.15708  1 0 0 0.31416  1 0 0 0.47124  1 0 0 0.62832  1 0 0 0.78540  1 0 0 0.94248  1 0 0 1.09956  1 0 0 1.25664  1 0 0 1.41372  1 0 0 1.57080  1 0 0 1.72788  1 0 0 1.88496  1 0 0 2.04204  1 0 0 2.19911  1 0 0 2.35619  1 0 0 2.51327  1 0 0 2.67035  1 0 0 2.82743  1 0 0 2.98451  1 0 0 3.14159  1 0 0 3.14159"> </OrientationInterpolator>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_part2_5" toField="set_fraction"></Route>
+                        <Route fromNode="move_part2_5" fromField="value_changed" toNode="part2_5" toField="rotation"></Route>
+                    </Scene>
+                </x3d>
+            </div>
+            <div id="flower_fold">
+                <br />
+                <h1>Petal fold on one half of a preliminary fold-2D Diagram</h1>
+                <img src="images/Petal-fold.png" width="500" height="150"/>
+                <h1>Petal fold on one half of a preliminary fold-3D Animation</h1>
+                <x3d>
+                    <Scene>
+                        <!-- predefine the viewpoint of the observation -->
+                        <viewpoint id="default" description="default" position="4 4 4" orientation="-1 1 0 0.9553"></viewpoint>
+                        <!-- define the components and label them with DEFs  -->
+                        <Transform DEF="part_U">
+                            <Transform DEF="part_U12">
+                                <Transform DEF="part_U1">
+                                    <Shape>
+                                        <Appearance DEF="AP">
+                                            <TwoSidedMaterial separateBackColor="true" diffuseColor="0.1 0.1 0.9"
+                                                backDiffuseColor="0.9 0.9 0.6"/>
+                                        </Appearance>
+                                        <IndexedFaceSet solid="false" coordIndex="0 1 2 -1">
+                                            <Coordinate point="0 0 0  -1 0 -1  -2 0 0"/>
+                                        </IndexedFaceSet>
+                                    </Shape>
+                                </Transform>
+                                <Transform DEF="part_U2">
+                                    <Shape>
+                                        <Appearance USE="AP"></Appearance>
+                                        <IndexedFaceSet solid="false" coordIndex="0 1 2 -1">
+                                            <Coordinate point="0 0 0  0 0 -2  -1 0 -1"/>
+                                        </IndexedFaceSet>
+                                    </Shape>
+                                </Transform>
+                            </Transform>
+                            <Transform DEF="part_UR">
+                                <Transform DEF="part_U3">
+                                    <Transform DEF="part_U31">
+                                        <Shape>
+                                            <Appearance USE="AP"></Appearance>
+                                            <IndexedFaceSet solid="false" coordIndex="0 1 2 -1">
+                                                <Coordinate point="0 0 0  0.5858 0 -0.5858  0 0 -2"/>
+                                            </IndexedFaceSet>
+                                        </Shape>
+                                    </Transform>
+                                    <Transform DEF="part_U32" translation="0.5858 0 -0.5858">
+                                        <Shape>
+                                            <Appearance USE="AP"></Appearance>
+                                            <IndexedFaceSet solid="false" coordIndex="0 1 2 -1">
+                                                <Coordinate point="0 0 0  0.4142 0 -0.4142   -0.5858 0 -1.4142"/>
+                                            </IndexedFaceSet>
+                                        </Shape>
+                                    </Transform>
+                                </Transform>
+                                <Transform DEF="part_U456" translation="0.5858 0 -0.5858">
+                                    <Transform DEF="part_U4">
+                                        <Shape>
+                                            <Appearance USE="AP"></Appearance>
+                                            <IndexedFaceSet solid="false" coordIndex="0 1 2 -1">
+                                                <Coordinate point="0 0 0  -0.5858 0 0.5858  0 0 0.5858"/>
+                                            </IndexedFaceSet>
+                                        </Shape>
+                                    </Transform>
+                                    <Transform DEF="part_U5">
+                                        <Shape>
+                                            <Appearance USE="AP"></Appearance>
+                                            <IndexedFaceSet solid="false" coordIndex="0 1 2 -1">
+                                                <Coordinate point="0 0 0  0 0 0.5858  1.4142 0 0.5858"/>
+                                            </IndexedFaceSet>
+                                        </Shape>
+                                    </Transform>
+                                    <Transform DEF="part_U6_1">
+                                        <Transform DEF="part_U6">
+                                            <Shape>
+                                                <Appearance USE="AP"></Appearance>
+                                                <IndexedFaceSet solid="false" coordIndex="0 1 2 -1">
+                                                    <Coordinate point="0 0 0  1.4142 0 0.5858  0.4142 0 -0.4142"/>
+                                                </IndexedFaceSet>
+                                            </Shape>
+                                        </Transform>
+                                    </Transform>
+                                </Transform>
+                            </Transform>
+                        </Transform>
+                        <Transform DEF="part_D">
+                            <Transform DEF="part_D12">
+                                <Transform DEF="part_D1">
+                                    <Shape>
+                                        <Appearance USE="AP"></Appearance>
+                                        <IndexedFaceSet solid="false" coordIndex="0 1 2 -1">
+                                            <Coordinate point="0 0 0   -2 0 0   -1 0 1"/>
+                                        </IndexedFaceSet>
+                                    </Shape>
+                                </Transform>
+                                <Transform DEF="part_D2">
+                                    <Shape>
+                                        <Appearance USE="AP"></Appearance>
+                                        <IndexedFaceSet solid="false" coordIndex="0 1 2 -1">
+                                            <Coordinate point="0 0 0  -1 0 1  0 0 2"/>
+                                        </IndexedFaceSet>
+                                    </Shape>
+                                </Transform>
+                            </Transform>
+                            <Transform DEF="part_DR">
+                                <Transform DEF="part_D3">
+                                    <Transform DEF="part_D31">
+                                        <Shape>
+                                            <Appearance USE="AP"></Appearance>
+                                            <IndexedFaceSet solid="false" coordIndex="0 1 2 -1">
+                                                <Coordinate point="0 0 0  0 0 2  0.5858 0 0.5858"/>
+                                            </IndexedFaceSet>
+                                        </Shape>
+                                    </Transform>
+                                    <Transform DEF="part_D32" translation="0.5858 0 0.5858">
+                                        <Shape>
+                                            <Appearance USE="AP"></Appearance>
+                                            <IndexedFaceSet solid="false" coordIndex="0 1 2 -1">
+                                                <Coordinate point="0 0 0   -0.5858 0 1.4142  0.4142 0 0.4142"/>
+                                            </IndexedFaceSet>
+                                        </Shape>
+                                    </Transform>
+                                </Transform>
+                                <Transform DEF="part_D456" translation="0.5858 0 0.5858">
+                                    <Transform DEF="part_D4">
+                                        <Shape>
+                                            <Appearance USE="AP"></Appearance>
+                                            <IndexedFaceSet solid="false" coordIndex="0 1 2 -1">
+                                                <Coordinate point="0 0 0  0 0 -0.5858  -0.5858 0 -0.5858"/>
+                                            </IndexedFaceSet>
+                                        </Shape>
+                                    </Transform>
+                                    <Transform DEF="part_D5">
+                                        <Shape>
+                                            <Appearance USE="AP"></Appearance>
+                                            <IndexedFaceSet solid="false" coordIndex="0 1 2 -1">
+                                                <Coordinate point="0 0 0  1.4142 0 -0.5858  0 0 -0.5858"/>
+                                            </IndexedFaceSet>
+                                        </Shape>
+                                    </Transform>
+                                    <Transform DEF="part_D6_1">
+                                        <Transform DEF="part_D6">
+                                            <Shape>
+                                                <Appearance USE="AP"></Appearance>
+                                                <IndexedFaceSet solid="false" coordIndex="0 1 2 -1">
+                                                    <Coordinate point="0 0 0  0.4142 0 0.4142  1.4142 0 -0.5858"/>
+                                                </IndexedFaceSet>
+                                            </Shape>
+                                        </Transform>
+                                    </Transform>
+                                </Transform>
+                            </Transform>
+                        </Transform>
+                        <!-- define a time trigger -->
+                        <TimeSensor DEF="time" cycleInterval="10" loop="true"/>
+                        <!-- define the key positions during the movement and the routes, along which events are propagated according to the event model-->
+                        <OrientationInterpolator DEF="move_U" key="0  0.1  0.3  1"
+                            keyvalue="0 0 0 0  0 0 0 0  -1 0 0 1.57  -1 0 0 1.57"></OrientationInterpolator>
+                        <OrientationInterpolator DEF="move_D" key="0  0.1  0.3  1"
+                            keyvalue="0 0 0 0  0 0 0 0  1 0 0 1.57  1 0 0 1.57"></OrientationInterpolator>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_U" toField="set_fraction"></Route>
+                        <Route fromNode="move_U" fromField="value_changed" toNode="part_U" toField="rotation"></Route>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_D" toField="set_fraction"></Route>
+                        <Route fromNode="move_D" fromField="value_changed" toNode="part_D" toField="rotation"></Route>
+                        <OrientationInterpolator DEF="move_UDL" key="0  0.4  0.6  1"
+                            keyvalue="0 0 0 0  0 0 0 0  0 0 -1 1.57  0 0 -1 1.57"></OrientationInterpolator>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_UDL" toField="set_fraction"></Route>
+                        <Route fromNode="move_UDL" fromField="value_changed" toNode="part_D12" toField="rotation"></Route>
+                        <Route fromNode="move_UDL" fromField="value_changed" toNode="part_U12" toField="rotation"></Route>
+                        <OrientationInterpolator DEF="move_U1"
+                            key="0  0.400  0.410  0.420  0.430  0.440  0.450  0.460  0.470  0.480  0.490  0.500  0.510  0.520  0.530  0.540  0.550  0.560  0.570  0.580  0.590  0.600  1"
+                            keyvalue="0 0 0 0  1 0 1 0  1 0 1 0.1112  1 0 1 0.2231  1 0 1 0.3363  1 0 1 0.4517  1 0 1 0.5698  1 0 1 0.6916  1 0 1 0.8178  1 0 1 0.9492  1 0 1 1.0866  1 0 1 1.2310  1 0 1 1.3831  1 0 1 1.5437  1 0 1 1.7135  1 0 1 1.8928  1 0 1 2.0818  1 0 1 2.2801  1 0 1 2.4870  1 0 1 2.7009  1 0 1 2.9199  1 0 1 3.14  1 0 1 3.14"> </OrientationInterpolator>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_U1" toField="set_fraction"></Route>
+                        <Route fromNode="move_U1" fromField="value_changed" toNode="part_U1" toField="rotation"></Route>
+                        <OrientationInterpolator DEF="move_D1"
+                            key="0  0.400  0.410  0.420  0.430  0.440  0.450  0.460  0.470  0.480  0.490  0.500  0.510  0.520  0.530  0.540  0.550  0.560  0.570  0.580  0.590  0.600  1"
+                            keyvalue="0 0 0 0  -1 0 1 0  -1 0 1 0.1112  -1 0 1 0.2231  -1 0 1 0.3363  -1 0 1 0.4517  -1 0 1 0.5698  -1 0 1 0.6916  -1 0 1 0.8178  -1 0 1 0.9492  -1 0 1 1.0866  -1 0 1 1.2310  -1 0 1 1.3831  -1 0 1 1.5437  -1 0 1 1.7135  -1 0 1 1.8928  -1 0 1 2.0818  -1 0 1 2.2801  -1 0 1 2.4870  -1 0 1 2.7009  -1 0 1 2.9199  -1 0 1 3.14  -1 0 1 3.14"> </OrientationInterpolator>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_D1" toField="set_fraction"></Route>
+                        <Route fromNode="move_D1" fromField="value_changed" toNode="part_D1" toField="rotation"></Route>
+                        <OrientationInterpolator DEF="move_UDR" key="0  0.4  0.6  1"
+                            keyvalue="0 0 0 0  0 0 0 0  0 0 1 1.57  0 0 1 1.57"></OrientationInterpolator>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_UDR" toField="set_fraction"></Route>
+                        <Route fromNode="move_UDR" fromField="value_changed" toNode="part_DR" toField="rotation"></Route>
+                        <Route fromNode="move_UDR" fromField="value_changed" toNode="part_UR" toField="rotation"></Route>
+                        <OrientationInterpolator DEF="move_U456"
+                            key="0  0.400  0.410  0.420  0.430  0.440  0.450  0.460  0.470  0.480  0.490  0.500  0.510  0.520  0.530  0.540  0.550  0.560  0.570  0.580  0.590  0.600  1"
+                            keyvalue="0 0 0 0  1 0 -1 0  1 0 -1 0.1112  1 0 -1 0.2231  1 0 -1 0.3363  1 0 -1 0.4517  1 0 -1 0.5698  1 0 -1 0.6916  1 0 -1 0.8178  1 0 -1 0.9492  1 0 -1 1.0866  1 0 -1 1.2310  1 0 -1 1.3831  1 0 -1 1.5437  1 0 -1 1.7135  1 0 -1 1.8928  1 0 -1 2.0818  1 0 -1 2.2801  1 0 -1 2.4870  1 0 -1 2.7009  1 0 -1 2.9199  1 0 -1 3.14  1 0 -1 3.14"> </OrientationInterpolator>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_U456" toField="set_fraction"></Route>
+                        <Route fromNode="move_U456" fromField="value_changed" toNode="part_U456" toField="rotation"></Route>
+                        <OrientationInterpolator DEF="move_D456"
+                            key="0  0.400  0.410  0.420  0.430  0.440  0.450  0.460  0.470  0.480  0.490  0.500  0.510  0.520  0.530  0.540  0.550  0.560  0.570  0.580  0.590  0.600  1"
+                            keyvalue="0 0 0 0  -1 0 -1 0  -1 0 -1 0.1112  -1 0 -1 0.2231  -1 0 -1 0.3363  -1 0 -1 0.4517  -1 0 -1 0.5698  -1 0 -1 0.6916  -1 0 -1 0.8178  -1 0 -1 0.9492  -1 0 -1 1.0866  -1 0 -1 1.2310  -1 0 -1 1.3831  -1 0 -1 1.5437  -1 0 -1 1.7135  -1 0 -1 1.8928  -1 0 -1 2.0818  -1 0 -1 2.2801  -1 0 -1 2.4870  -1 0 -1 2.7009  -1 0 -1 2.9199  -1 0 -1 3.14  -1 0 -1 3.14"> </OrientationInterpolator>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_D456" toField="set_fraction"></Route>
+                        <Route fromNode="move_D456" fromField="value_changed" toNode="part_D456" toField="rotation"></Route>
+                        <OrientationInterpolator DEF="move_UD56" key="0  0.7  0.9  1"
+                            keyvalue="0 0 0 0  0 0 0 0  0 0 1 3.1415  0 0 1 3.14"> </OrientationInterpolator>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_UD56" toField="set_fraction"></Route>
+                        <Route fromNode="move_UD56" fromField="value_changed" toNode="part_D5" toField="rotation"></Route>
+                        <Route fromNode="move_UD56" fromField="value_changed" toNode="part_U5" toField="rotation"></Route>
+                        <Route fromNode="move_UD56" fromField="value_changed" toNode="part_D6_1" toField="rotation"></Route>
+                        <Route fromNode="move_UD56" fromField="value_changed" toNode="part_U6_1" toField="rotation"></Route>
+                        <OrientationInterpolator DEF="move_D6"
+                            key="0  0.700  0.710  0.720  0.730  0.740  0.750  0.760  0.770  0.780  0.790  0.800  0.810  0.820  0.830  0.840  0.850  0.860  0.870  0.880  0.890  0.900  1"
+                            keyvalue="0 0 0 0  1.4142 0 -0.5858 0 1.4142 0 -0.5858 0.0602 1.4142 0 -0.5858 0.1211 1.4142 0 -0.5858 0.1832 1.4142 0 -0.5858 0.2474 1.4142 0 -0.5858 0.3144 1.4142 0 -0.5858 0.3851 1.4142 0 -0.5858 0.4607 1.4142 0 -0.5858 0.5424 1.4142 0 -0.5858 0.6318 1.4142 0 -0.5858 0.7310 1.4142 0 -0.5858 0.8425 1.4142 0 -0.5858 0.9696 1.4142 0 -0.5858 1.1165 1.4142 0 -0.5858 1.2884 1.4142 0 -0.5858 1.4917 1.4142 0 -0.5858 1.7337 1.4142 0 -0.5858 2.0210 1.4142 0 -0.5858 2.3568 1.4142 0 -0.5858 2.7359 1.4142 0 -0.5858 3.14  1.4142 0 -0.5858 3.14"> </OrientationInterpolator>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_D6" toField="set_fraction"></Route>
+                        <Route fromNode="move_D6" fromField="value_changed" toNode="part_D6" toField="rotation"></Route>
+                        <OrientationInterpolator DEF="move_U6"
+                            key="0  0.700  0.710  0.720  0.730  0.740  0.750  0.760  0.770  0.780  0.790  0.800  0.810  0.820  0.830  0.840  0.850  0.860  0.870  0.880  0.890  0.900  1"
+                            keyvalue="0 0 0 0  -1.4142 0 -0.5858 0 -1.4142 0 -0.5858  0.0602 -1.4142 0 -0.5858  0.1211 -1.4142 0 -0.5858  0.1832 -1.4142 0 -0.5858  0.2474 -1.4142 0 -0.5858  0.3144 -1.4142 0 -0.5858  0.3851 -1.4142 0 -0.5858  0.4607 -1.4142 0 -0.5858  0.5424 -1.4142 0 -0.5858  0.6318 -1.4142 0 -0.5858  0.7310 -1.4142 0 -0.5858  0.8425 -1.4142 0 -0.5858  0.9696 -1.4142 0 -0.5858  1.1165 -1.4142 0 -0.5858  1.2884 -1.4142 0 -0.5858  1.4917 -1.4142 0 -0.5858  1.7337 -1.4142 0 -0.5858  2.0210 -1.4142 0 -0.5858  2.3568 -1.4142 0 -0.5858  2.7359 -1.4142 0 -0.5858  3.14 -1.4142 0 -0.5858  3.14"> </OrientationInterpolator>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_U6" toField="set_fraction"></Route>
+                        <Route fromNode="move_U6" fromField="value_changed" toNode="part_U6" toField="rotation"></Route>
+                        <OrientationInterpolator DEF="move_D32"
+                            key="0  0.700  0.710  0.720  0.730  0.740  0.750  0.760  0.770  0.780  0.790  0.800  0.810  0.820  0.830  0.840  0.850  0.860  0.870  0.880  0.890  0.900 1"
+                            keyvalue="0 0 0 0  0.8284 0 -2 0 0.8284 0 -2  0.0602 0.8284 0 -2  0.1211 0.8284 0 -2  0.1832 0.8284 0 -2  0.2474 0.8284 0 -2  0.3144 0.8284 0 -2  0.3851 0.8284 0 -2  0.4607 0.8284 0 -2  0.5424 0.8284 0 -2  0.6318 0.8284 0 -2  0.7310 0.8284 0 -2  0.8425 0.8284 0 -2  0.9696 0.8284 0 -2  1.1165 0.8284 0 -2  1.2884 0.8284 0 -2  1.4917 0.8284 0 -2  1.7337 0.8284 0 -2  2.0210 0.8284 0 -2  2.3568 0.8284 0 -2  2.7359 0.8284 0 -2 3.14  0.8284 0 -2 3.14"> </OrientationInterpolator>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_D32" toField="set_fraction"></Route>
+                        <Route fromNode="move_D32" fromField="value_changed" toNode="part_D32" toField="rotation"></Route>
+                        <OrientationInterpolator DEF="move_U32"
+                            key="0  0.700  0.710  0.720  0.730  0.740  0.750  0.760  0.770  0.780  0.790  0.800  0.810  0.820  0.830  0.840  0.850  0.860  0.870  0.880  0.890  0.900 1"
+                            keyvalue="0 0 0 0  -0.8284 0 -2 0 -0.8284 0 -2  0.0602 -0.8284 0 -2  0.1211 -0.8284 0 -2  0.1832 -0.8284 0 -2  0.2474 -0.8284 0 -2  0.3144 -0.8284 0 -2  0.3851 -0.8284 0 -2  0.4607 -0.8284 0 -2  0.5424 -0.8284 0 -2  0.6318 -0.8284 0 -2  0.7310 -0.8284 0 -2  0.8425 -0.8284 0 -2  0.9696 -0.8284 0 -2  1.1165 -0.8284 0 -2  1.2884 -0.8284 0 -2  1.4917 -0.8284 0 -2  1.7337 -0.8284 0 -2  2.0210 -0.8284 0 -2  2.3568 -0.8284 0 -2  2.7359 -0.8284 0 -2  3.14  -0.8284 0 -2 3.14"> </OrientationInterpolator>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_U32" toField="set_fraction"></Route>
+                        <Route fromNode="move_U32" fromField="value_changed" toNode="part_U32" toField="rotation"></Route>
+                    </Scene>
+                </x3d>
+            </div>
+            <div id="Paper_Crane">
+                <br />
+                <br />
+                <br />
+                <h1>Paper Crane-3D Animation</h1>
+                <x3d  style="width:600; height: 400">
+                    <Scene>
+                        <!-- predefine the viewpoint of the observation -->
+                        <Viewpoint id="upper_front" description="upper_front" position="0 12 14"
+                            orientation="-1 0 0  0.78" ></Viewpoint>
+                        <viewpoint id="upper_right_front" description="upper_right_front"
+                            position="10 10 10" orientation="-1 1 0  0.9553" ></viewpoint>
+                        <viewpoint id="lower_front" description="lower_front" position="0 -10 10"
+                            orientation="1 0 0  0.7854" ></viewpoint>
+                        <viewpoint id="upper_right" description="upper_right" position="10 10 0"
+                            orientation="-1 1 0  1.5708" ></viewpoint>
+                        <viewpoint id="top" description="top" position="0 12 0"
+                            orientation="-1 0 0  1.5708" ></viewpoint>
+                        <!-- define the components and label them with DEFs  -->
+                        <Transform DEF="all">
+                            <Transform DEF="part_up">
+                                <Transform DEF="part_up1">
+                                  <Transform DEF="part_up_left">
+                                  <Transform DEF="part_up_left1">
+                                  <Transform DEF="part_up_left2">
+                                    <Transform DEF="part_up_left_1">
+                                    <Transform DEF="part_up_left1_1">
+                                      <Transform DEF="part_up_left_11">
+                                        <Transform DEF="part_up_left_111" translation="-8 0 0">
+                                            <Transform DEF="part_up_left_1111" translation="5.6569 0 0">
+                                                <Shape>
+                                                    <Appearance DEF="AP">
+                                                        <TwoSidedMaterial separateBackColor="true" diffuseColor="0.1 0.1 0.9" backDiffuseColor="0.9 0.9 0.6"></TwoSidedMaterial>
+                                                    </Appearance>
+                                                    <IndexedFaceSet solid="false" coordIndex="0 1 2 -1">
+                                                        <Coordinate point="0 0 0  -0.4306 0 -1.0396  -5.6569 0 0 "></Coordinate>
+                                                    </IndexedFaceSet>
+                                                </Shape>
+                                            </Transform>
+                                            <Transform DEF="part_up_left_1112" translation="5.6569 0 0">
+                                                <Shape>
+                                                    <Appearance USE="AP"></Appearance>
+                                                    <IndexedFaceSet solid="false" coordIndex="0 1 2 -1">
+                                                        <Coordinate point="0 0 0  0 0 -1.1252  -0.4306 0 -1.0396"></Coordinate>
+                                                    </IndexedFaceSet>
+                                                </Shape>
+                                            </Transform>
+                                            <Transform DEF="part_up_left_1113" translation="5.6569 0 0">
+                                                <Shape>
+                                                    <Appearance USE="AP"></Appearance>
+                                                    <IndexedFaceSet solid="false" coordIndex="0 1 2 3 -1">
+                                                        <Coordinate point="0 0 0  2.3431 0 0  1.0158 0 -1.3273  0 0 -1.1252"></Coordinate>
+                                                    </IndexedFaceSet> 
+                                                </Shape>
+                                            </Transform>
+                                        </Transform>
+                                        <Transform DEF="part_up_left_112" translation="-8 0 0">
+                                            <Transform DEF="part_up_left_1121" translation="5.2263 0 -1.0396">
+                                                <Shape>
+                                                    <Appearance USE="AP"></Appearance>
+                                                    <IndexedFaceSet solid="false" coordIndex="0 1 2 -1">
+                                                        <Coordinate point="0 0 0  0 0 -1.1252  -5.2263 0 1.0396"></Coordinate>
+                                                    </IndexedFaceSet>
+                                                </Shape>
+                                            </Transform>
+                                            <Transform DEF="part_up_left_1122" translation="5.2263 0 -1.0396">
+                                                <Shape>
+                                                    <Appearance USE="AP"></Appearance>
+                                                    <IndexedFaceSet solid="false" coordIndex="0 1 2 3 -1">
+                                                        <Coordinate point="0 0 0  0.4306 0 -0.0856  0.4306 0 -1.3035  0 0 -1.1252"></Coordinate>
+                                                    </IndexedFaceSet>
+                                                </Shape>
+                                            </Transform>
+                                            <Transform DEF="part_up_left_1123" translation="5.6569 0 -1.1252">
+                                                <Shape>
+                                                    <Appearance USE="AP"></Appearance>
+                                                    <IndexedFaceSet solid="false" coordIndex="0 1 2 -1">
+                                                        <Coordinate point="0 0 0  1.0158 0 -0.2021  0 0 -1.2179"></Coordinate>
+                                                    </IndexedFaceSet>
+                                                </Shape>
+                                            </Transform>
+                                        </Transform>
+                                    </Transform>
+                                    <Transform DEF="part_up_left_12" translation="-2.3431 0 -2.3431">
+                                        <Transform DEF="part_up_left1_12">
+                                        <Transform DEF="part_up_left_121" translation="-5.6569 0 2.3431">
+                                            <Transform DEF="part_up_left_1211"  translation="5.2263 0 -2.1648">
+                                                <Shape>
+                                                    <Appearance USE="AP"></Appearance>
+                                                    <IndexedFaceSet solid="false" coordIndex="0 1 2 -1">
+                                                        <Coordinate point="0 0 0  -0.7956 0 -0.7956  -5.2263 0 2.1648"></Coordinate>
+                                                    </IndexedFaceSet>
+                                                </Shape> 
+                                            </Transform>
+                                            <Transform DEF="part_up_left_1212"  translation="5.2263 0 -2.1648">
+                                                <Shape>
+                                                    <Appearance USE="AP"></Appearance>
+                                                    <IndexedFaceSet solid="false" coordIndex="0 1 2 3 -1">
+                                                        <Coordinate point="0 0 0  0.4306 0 -0.1783  -0.4307 0 -1.0396  -0.7956 0 -0.7956"></Coordinate>
+                                                    </IndexedFaceSet>
+                                                </Shape> 
+                                            </Transform>
+                                        </Transform>
+                                        <Transform DEF="part_up_left_122" translation="-5.6569 0 2.3431">
+                                            <Transform DEF="part_up_left_1221" translation="4.4307 0 -2.9604">
+                                                <Shape>
+                                                    <Appearance USE="AP"></Appearance>
+                                                    <IndexedFaceSet solid="false" coordIndex="0 1 2 -1">
+                                                        <Coordinate point="0 0 0  -0.4307 0 -1.0396  -4.4307 0 2.9604"></Coordinate>
+                                                    </IndexedFaceSet>
+                                                </Shape> 
+                                            </Transform>
+                                            <Transform DEF="part_up_left_1222" translation="4.4307 0 -2.9604">
+                                                <Shape>
+                                                    <Appearance USE="AP"></Appearance>
+                                                    <IndexedFaceSet solid="false" coordIndex="0 1 2 -1">
+                                                        <Coordinate point="0 0 0  0.3649 0 -0.2440  -0.4307 0 -1.0396"></Coordinate>
+                                                    </IndexedFaceSet>
+                                                </Shape> 
+                                            </Transform>
+                                        </Transform>
+                                    </Transform> 
+                                    </Transform>
+                                </Transform>
+                                </Transform>
+                                <Transform DEF="part_up_left_2">
+                                    <Transform DEF="part_up_left1_2">
+                                        <Transform DEF="part_up_left_21" translation="-2.3431 0 -2.3431">
+                                            <Transform DEF="part_up_left_211" translation="1.0158 0 1.0158">
+                                            <Shape>
+                                                <Appearance USE="AP"></Appearance>
+                                                <IndexedFaceSet solid="false" coordIndex="0 1 2 -1">
+                                                    <Coordinate point="0 0 0  0.1985 0 -1.0158  -1.0158 0 -1.0158"></Coordinate>
+                                                </IndexedFaceSet>
+                                            </Shape> 
+                                        </Transform>
+                                            <Transform DEF="part_up_left_212" translation="2.3431 0 2.3431">
+                                            <Shape>
+                                                <Appearance USE="AP"></Appearance>
+                                                <IndexedFaceSet solid="false" coordIndex="0 1 2 3 -1">
+                                                    <Coordinate point="0 0 0  0 0 -2.3431  -1.1252 0 -2.3431  -1.3273 0 -1.3273"></Coordinate>
+                                                </IndexedFaceSet>
+                                            </Shape>
+                                        </Transform>
+                                    </Transform>
+                                    <Transform DEF="part_up_left_22" translation="-2.3431 0 -2.3431">
+                                        <Transform DEF="part_up_left_221" translation="1.2179 0 0">
+                                            <Shape>
+                                                <Appearance USE="AP"></Appearance>
+                                                <IndexedFaceSet solid="false" coordIndex="0 1 2 -1">
+                                                    <Coordinate point="0 0 0  -0.3951 0 -1.9865  -1.2179 0 0"></Coordinate>
+                                                </IndexedFaceSet>
+                                            </Shape> 
+                                        </Transform>
+                                        <Transform DEF="part_up_left_222"  translation="0.8223 0 -1.9865">
+                                            <Shape>
+                                                <Appearance USE="AP"></Appearance>
+                                                <IndexedFaceSet solid="false" coordIndex="0 1 2 3 -1">
+                                                    <Coordinate point="0 0 0  0.3951 0 1.9865  1.5203 0 1.9865  1.5203 0 0"></Coordinate>
+                                                </IndexedFaceSet>
+                                            </Shape>
+                                        </Transform>
+                                        <Transform DEF="part_up_left_223"  translation="0.8223 0 -1.9865">
+                                            <Shape>
+                                                <Appearance USE="AP"></Appearance>
+                                                <IndexedFaceSet solid="false" coordIndex="0 1 2 -1">
+                                                    <Coordinate point="0 0 0  1.5203 0 0  1.5203 0 -3.6704"></Coordinate>
+                                                </IndexedFaceSet>
+                                            </Shape>
+                                        </Transform>
+                                    </Transform>
+                                    <Transform DEF="part_up_left_23" translation="-2.3431 0 -2.3431">
+                                        <Transform DEF="part_up_left1_23">
+                                            <Transform DEF="part_up_left2_23">
+                                             <Transform DEF="part_up_left_231" translation="0.8223 0 -1.9865">
+                                               <Shape>
+                                                <Appearance USE="AP"></Appearance>
+                                                <IndexedFaceSet solid="false" coordIndex="0 1 2 -1">
+                                                    <Coordinate point="0 0 0  -1.6841 0 1.1252  -0.8223 0 1.9865"></Coordinate>
+                                                </IndexedFaceSet>
+                                               </Shape> 
+                                             </Transform>
+                                           <Transform DEF="part_up_left_232" translation="0.8223 0 -1.9865">
+                                            <Shape>
+                                                <Appearance USE="AP"></Appearance>
+                                                <IndexedFaceSet solid="false" coordIndex="0 1 2 3 -1">
+                                                    <Coordinate point="0 0 0  -1.0751 0 -1.0751  -2.4797 0 0.3296  -1.6841 0 1.1252"></Coordinate>
+                                                </IndexedFaceSet>
+                                            </Shape>
+                                        </Transform>
+                                        <Transform DEF="part_up_left_233"  translation="0.8223 0 -1.9865">
+                                            <Shape>
+                                                <Appearance USE="AP"></Appearance>
+                                                <IndexedFaceSet solid="false" coordIndex="0 1 2 -1">
+                                                    <Coordinate point="0 0 0  1.5203 0 -3.6704  -1.0751 0 -1.0751"></Coordinate>
+                                                </IndexedFaceSet>
+                                            </Shape>
+                                        </Transform>
+                                        </Transform>
+                                       </Transform>
+                                    </Transform>
+                                    </Transform>
+                                    </Transform>
+                                  </Transform>
+                               </Transform>
+                            </Transform> 
+                            <Transform DEF="part_up_right">
+                                <Transform DEF="part_up_right1">
+                                    <Transform DEF="part_up_right2">
+                                <Transform DEF="part_up_right_1">
+                                    <Transform DEF="part_up_right1_1">
+                                    <Transform DEF="part_up_right_11">
+                                        <Transform DEF="part_up_right_111" translation="8 0 0">
+                                            <Transform DEF="part_up_right_1111" translation="-5.6569 0 0">
+                                                <Shape>
+                                                    <Appearance DEF="AP_contrary">
+                                                        <TwoSidedMaterial separateBackColor="true" diffuseColor="0.9 0.9 0.6" backDiffuseColor="0.1 0.1 0.9"></TwoSidedMaterial>
+                                                    </Appearance>
+                                                    <IndexedFaceSet solid="false" coordIndex="0 1 2 3 -1">
+                                                        <Coordinate point="0 0 0  0.4306 0 -1.0396  3.9887 0 -0.3318  3.6569 0 0"></Coordinate>
+                                                    </IndexedFaceSet>
+                                                </Shape>
+                                                <Transform DEF="part_up_right_1111_beak" translation="3.6569 0 0">
+                                                    <Shape>
+                                                        <Appearance USE="AP_contrary"></Appearance>
+                                                        <IndexedFaceSet solid="false" coordIndex="0 1 2 -1">
+                                                            <Coordinate point="0 0 0  0.3318 0 -0.3318  2 0 0 "></Coordinate>
+                                                        </IndexedFaceSet>
+                                                    </Shape>
+                                                </Transform>
+                                            </Transform>
+                                            <Transform DEF="part_up_right_1112" translation="-5.6569 0 0">
+                                                <Shape>
+                                                    <Appearance USE="AP_contrary"></Appearance>
+                                                    <IndexedFaceSet solid="false" coordIndex="0 1 2 -1">
+                                                        <Coordinate point="0 0 0  0 0 -1.1252  0.4306 0 -1.0396"></Coordinate>
+                                                    </IndexedFaceSet>
+                                                </Shape>
+                                            </Transform>
+                                            <Transform DEF="part_up_right_1113" translation="-5.6569 0 0">
+                                                <Shape>
+                                                    <Appearance USE="AP_contrary"></Appearance>
+                                                    <IndexedFaceSet solid="false" coordIndex="0 1 2 3 -1">
+                                                        <Coordinate point="0 0 0  -2.3431 0 0  -1.0158 0 -1.3273  0 0 -1.1252"></Coordinate>
+                                                    </IndexedFaceSet> 
+                                                </Shape>
+                                            </Transform>
+                                        </Transform>
+                                        <Transform DEF="part_up_right_112" translation="8 0 0">
+                                            <Transform DEF="part_up_right_1121" translation="-5.2263 0 -1.0396">
+                                                <Shape>
+                                                    <Appearance USE="AP_contrary"></Appearance>
+                                                    <IndexedFaceSet solid="false" coordIndex="0 1 2 3 -1">
+                                                        <Coordinate point="0 0 0  0 0 -1.1252  3.3785 0 0.2742  3.5581 0 0.7078"></Coordinate>
+                                                    </IndexedFaceSet>
+                                                </Shape>
+                                                <Transform DEF="part_up_right_1121_beak" translation="3.5581 0 0.7078">
+                                                    <Shape>
+                                                        <Appearance USE="AP_contrary"></Appearance>
+                                                        <IndexedFaceSet solid="false" coordIndex="0 1 2 -1">
+                                                            <Coordinate point="0 0 0  -0.1796 0 -0.4336  1.6682 0 0.3318"></Coordinate>
+                                                        </IndexedFaceSet>
+                                                    </Shape>
+                                                </Transform>
+                                            </Transform>
+                                            <Transform DEF="part_up_right_1122" translation="-5.2263 0 -1.0396">
+                                                <Shape>
+                                                    <Appearance USE="AP_contrary"></Appearance>
+                                                    <IndexedFaceSet solid="false" coordIndex="0 1 2 3 -1">
+                                                        <Coordinate point="0 0 0  -0.4306 0 -0.0856  -0.4306 0 -1.3035  0 0 -1.1252"></Coordinate>
+                                                    </IndexedFaceSet>
+                                                </Shape>
+                                            </Transform>
+                                            <Transform DEF="part_up_right_1123" translation="-5.6569 0 -1.1252">
+                                                <Shape>
+                                                    <Appearance USE="AP_contrary"></Appearance>
+                                                    <IndexedFaceSet solid="false" coordIndex="0 1 2 -1">
+                                                        <Coordinate point="0 0 0  -1.0158 0 -0.2021  0 0 -1.2179"></Coordinate>
+                                                    </IndexedFaceSet>
+                                                </Shape>
+                                            </Transform>
+                                        </Transform>
+                                    </Transform>
+                                    <Transform DEF="part_up_right_12" translation="2.3431 0 -2.3431">
+                                        <Transform DEF="part_up_right1_12">
+                                        <Transform DEF="part_up_right_121" translation="5.6569 0 2.3431">
+                                            <Transform DEF="part_up_right_1211"  translation="-5.2263 0 -2.1648">
+                                                <Shape>
+                                                    <Appearance USE="AP_contrary"></Appearance>
+                                                    <IndexedFaceSet solid="false" coordIndex="0 1 2 3 -1">
+                                                        <Coordinate point="0 0 0  0.7956 0 -0.7956  3.8121 0 1.2199  3.3785 0 1.3994"></Coordinate>
+                                                    </IndexedFaceSet>
+                                                </Shape>
+                                                <Transform DEF="part_up_right_1211_beak"  translation="3.3785 0 1.3994">
+                                                    <Shape>
+                                                        <Appearance USE="AP_contrary"></Appearance>
+                                                        <IndexedFaceSet solid="false" coordIndex="0 1 2 -1">
+                                                            <Coordinate point="0 0 0  0.4336 0 -0.1795  1.8478 0 0.7654"></Coordinate>
+                                                        </IndexedFaceSet>
+                                                    </Shape> 
+                                                </Transform>
+                                            </Transform>
+                                            <Transform DEF="part_up_right_1212"  translation="-5.2263 0 -2.1648">
+                                                <Shape>
+                                                    <Appearance USE="AP_contrary"></Appearance>
+                                                    <IndexedFaceSet solid="false" coordIndex="0 1 2 3 -1">
+                                                        <Coordinate point="0 0 0  -0.4306 0 -0.1783  0.4307 0 -1.0396  0.7956 0 -0.7956"></Coordinate>
+                                                    </IndexedFaceSet>
+                                                </Shape> 
+                                            </Transform>
+                                        </Transform>
+                                        <Transform DEF="part_up_right_122" translation="5.6569 0 2.3431">
+                                            <Transform DEF="part_up_right_1221" translation="-4.4307 0 -2.9604">
+                                                <Shape>
+                                                    <Appearance USE="AP_contrary"></Appearance>
+                                                    <IndexedFaceSet solid="false" coordIndex="0 1 2 3 -1">
+                                                        <Coordinate point="0 0 0  0.4307 0 -1.0396  3.0165 0 1.5462  3.0165 0 2.0155"></Coordinate>
+                                                    </IndexedFaceSet>
+                                                </Shape>
+                                                <Transform DEF="part_up_right_1221_beak" translation="3.0165 0 2.0155">
+                                                    <Shape>
+                                                        <Appearance USE="AP_contrary"></Appearance>
+                                                        <IndexedFaceSet solid="false" coordIndex="0 1 2 -1">
+                                                            <Coordinate point="0 0 0  0 0 -0.4693  1.4142 0 0.9449"></Coordinate>
+                                                        </IndexedFaceSet>
+                                                    </Shape> 
+                                                </Transform>
+                                            </Transform>
+                                            <Transform DEF="part_up_right_1222" translation="-4.4307 0 -2.9604">
+                                                <Shape>
+                                                    <Appearance USE="AP_contrary"></Appearance>
+                                                    <IndexedFaceSet solid="false" coordIndex="0 1 2 -1">
+                                                        <Coordinate point="0 0 0  -0.3649 0 -0.2440  0.4307 0 -1.0396"></Coordinate>
+                                                    </IndexedFaceSet>
+                                                </Shape> 
+                                            </Transform>
+                                        </Transform>
+                                    </Transform> 
+                                    </Transform>
+                                </Transform>
+                                </Transform>
+                                <Transform DEF="part_up_right_2">
+                                    <Transform DEF="part_up_right1_2">
+                                        <Transform DEF="part_up_right_21" translation="2.3431 0 -2.3431">
+                                            <Transform DEF="part_up_right_211" translation="-1.0158 0 1.0158">
+                                            <Shape>
+                                                <Appearance USE="AP_contrary"></Appearance>
+                                                <IndexedFaceSet solid="false" coordIndex="0 1 2 -1">
+                                                    <Coordinate point="0 0 0  -0.1985 0 -1.0158  1.0158 0 -1.0158"></Coordinate>
+                                                </IndexedFaceSet>
+                                            </Shape> 
+                                        </Transform>
+                                            <Transform DEF="part_up_right_212" translation="-2.3431 0 2.3431">
+                                            <Shape>
+                                                <Appearance USE="AP_contrary"></Appearance>
+                                                <IndexedFaceSet solid="false" coordIndex="0 1 2 3 -1">
+                                                    <Coordinate point="0 0 0  0 0 -2.3431  1.1252 0 -2.3431  1.3273 0 -1.3273"></Coordinate>
+                                                </IndexedFaceSet>
+                                            </Shape>
+                                        </Transform>
+                                    </Transform>
+                                    <Transform DEF="part_up_right_22" translation="2.3431 0 -2.3431">
+                                        <Transform DEF="part_up_right_221" translation="-1.2179 0 0">
+                                            <Shape>
+                                                <Appearance USE="AP_contrary"></Appearance>
+                                                <IndexedFaceSet solid="false" coordIndex="0 1 2 -1">
+                                                    <Coordinate point="0 0 0  0.3951 0 -1.9865  1.2179 0 0"></Coordinate>
+                                                </IndexedFaceSet>
+                                            </Shape> 
+                                        </Transform>
+                                        <Transform DEF="part_up_right_222"  translation="-0.8223 0 -1.9865">
+                                            <Shape>
+                                                <Appearance USE="AP_contrary"></Appearance>
+                                                <IndexedFaceSet solid="false" coordIndex="0 1 2 3 -1">
+                                                    <Coordinate point="0 0 0  -0.3951 0 1.9865  -1.5203 0 1.9865  -1.5203 0 0"></Coordinate>
+                                                </IndexedFaceSet>
+                                            </Shape>
+                                        </Transform>
+                                        <Transform DEF="part_up_right_223"  translation="-0.8223 0 -1.9865">
+                                            <Shape>
+                                                <Appearance USE="AP_contrary"></Appearance>
+                                                <IndexedFaceSet solid="false" coordIndex="0 1 2 -1">
+                                                    <Coordinate point="0 0 0  -1.5203 0 0  -1.5203 0 -3.6704"></Coordinate>
+                                                </IndexedFaceSet>
+                                            </Shape>
+                                        </Transform>
+                                    </Transform>
+                                    <Transform DEF="part_up_right_23" translation="2.3431 0 -2.3431">
+                                        <Transform DEF="part_up_right1_23">
+                                            <Transform DEF="part_up_right2_23">
+                                        <Transform DEF="part_up_right_231" translation="-0.8223 0 -1.9865">
+                                            <Shape>
+                                                <Appearance USE="AP_contrary"></Appearance>
+                                                <IndexedFaceSet solid="false" coordIndex="0 1 2 -1">
+                                                    <Coordinate point="0 0 0  1.6841 0 1.1252  0.8223 0 1.9865"></Coordinate>
+                                                </IndexedFaceSet>
+                                            </Shape> 
+                                        </Transform>
+                                        <Transform DEF="part_up_right_232" translation="-0.8223 0 -1.9865">
+                                            <Shape>
+                                                <Appearance USE="AP_contrary"></Appearance>
+                                                <IndexedFaceSet solid="false" coordIndex="0 1 2 3 -1">
+                                                    <Coordinate point="0 0 0  1.0751 0 -1.0751  2.4797 0 0.3296  1.6841 0 1.1252"></Coordinate>
+                                                </IndexedFaceSet>
+                                            </Shape>
+                                        </Transform>
+                                        <Transform DEF="part_up_right_233"  translation="-0.8223 0 -1.9865">
+                                            <Shape>
+                                                <Appearance USE="AP_contrary"></Appearance>
+                                                <IndexedFaceSet solid="false" coordIndex="0 1 2 -1">
+                                                    <Coordinate point="0 0 0  -1.5203 0 -3.6704  1.0751 0 -1.0751"></Coordinate>
+                                                </IndexedFaceSet>
+                                            </Shape>
+                                        </Transform>
+                                    </Transform>
+                                        </Transform>
+                                    </Transform>
+                                </Transform>
+                                </Transform>
+                                    </Transform>
+                                </Transform>
+                            </Transform>
+                            </Transform>
+                            </Transform>
+                            <Transform DEF="part_down">
+                                <Transform DEF="part_down1">
+                                <Transform DEF="part_down_left">
+                                <Transform DEF="part_down_left1">
+                                    <Transform DEF="part_down_left2">
+                                        <Transform DEF="part_down_left_1">
+                                            <Transform DEF="part_down_left1_1">
+                                                <Transform DEF="part_down_left_11">
+                                                    <Transform DEF="part_down_left_111" translation="-8 0 0">
+                                                        <Transform DEF="part_down_left_1111" translation="5.6569 0 0">
+                                                            <Shape>
+                                                                <Appearance DEF="AP">
+                                                                    <TwoSidedMaterial separateBackColor="true" diffuseColor="0.1 0.1 0.9" backDiffuseColor="0.9 0.9 0.6"></TwoSidedMaterial>
+                                                                </Appearance>
+                                                                <IndexedFaceSet solid="false" coordIndex="0 1 2 -1">
+                                                                    <Coordinate point="0 0 0  -5.6569 0 0  -0.4306 0 1.0396"></Coordinate>
+                                                                </IndexedFaceSet>
+                                                            </Shape>
+                                                        </Transform>
+                                                        <Transform DEF="part_down_left_1112" translation="5.6569 0 0">
+                                                            <Shape>
+                                                                <Appearance USE="AP"></Appearance>
+                                                                <IndexedFaceSet solid="false" coordIndex="0 1 2 -1">
+                                                                    <Coordinate point="0 0 0  -0.4306 0 1.0396  0 0 1.1252"></Coordinate>
+                                                                </IndexedFaceSet>
+                                                            </Shape>
+                                                        </Transform>
+                                                        <Transform DEF="part_down_left_1113" translation="5.6569 0 0">
+                                                            <Shape>
+                                                                <Appearance USE="AP"></Appearance>
+                                                                <IndexedFaceSet solid="false" coordIndex="0 1 2 3 -1">
+                                                                    <Coordinate point="0 0 0  0 0 1.1252  1.0158 0 1.3273  2.3431 0 0"></Coordinate>
+                                                                </IndexedFaceSet> 
+                                                            </Shape>
+                                                        </Transform>
+                                                    </Transform>
+                                                    <Transform DEF="part_down_left_112" translation="-8 0 0">
+                                                        <Transform DEF="part_down_left_1121" translation="5.2263 0 1.0396">
+                                                            <Shape>
+                                                                <Appearance USE="AP"></Appearance>
+                                                                <IndexedFaceSet solid="false" coordIndex="0 1 2 -1">
+                                                                    <Coordinate point="0 0 0  -5.2263 0 -1.0396  0 0 1.1252"></Coordinate>
+                                                                </IndexedFaceSet>
+                                                            </Shape>
+                                                        </Transform>
+                                                        <Transform DEF="part_down_left_1122" translation="5.2263 0 1.0396">
+                                                            <Shape>
+                                                                <Appearance USE="AP"></Appearance>
+                                                                <IndexedFaceSet solid="false" coordIndex="0 1 2 3 -1">
+                                                                    <Coordinate point="0 0 0  0 0 1.1252  0.4306 0 1.3035  0.4306 0 0.0856"></Coordinate>
+                                                                </IndexedFaceSet>
+                                                            </Shape>
+                                                        </Transform>
+                                                        <Transform DEF="part_down_left_1123" translation="5.6569 0 1.1252">
+                                                            <Shape>
+                                                                <Appearance USE="AP"></Appearance>
+                                                                <IndexedFaceSet solid="false" coordIndex="0 1 2 -1">
+                                                                    <Coordinate point="0 0 0  0 0 1.2179  1.0158 0 0.2021"></Coordinate>
+                                                                </IndexedFaceSet>
+                                                            </Shape>
+                                                        </Transform>
+                                                    </Transform>
+                                                </Transform>
+                                                <Transform DEF="part_down_left_12" translation="-2.3431 0 2.3431">
+                                                    <Transform DEF="part_down_left1_12">
+                                                    <Transform DEF="part_down_left_121" translation="-5.6569 0 -2.3431">
+                                                        <Transform DEF="part_down_left_1211"  translation="5.2263 0 2.1648">
+                                                            <Shape>
+                                                                <Appearance USE="AP"></Appearance>
+                                                                <IndexedFaceSet solid="false" coordIndex="0 1 2 -1">
+                                                                    <Coordinate point="0 0 0  -5.2263 0 -2.1648  -0.7956 0 0.7956"></Coordinate>
+                                                                </IndexedFaceSet>
+                                                            </Shape> 
+                                                        </Transform>
+                                                        <Transform DEF="part_down_left_1212"  translation="5.2263 0 2.1648">
+                                                            <Shape>
+                                                                <Appearance USE="AP"></Appearance>
+                                                                <IndexedFaceSet solid="false" coordIndex="0 1 2 3 -1">
+                                                                    <Coordinate point="0 0 0  -0.7956 0 0.7956  -0.4307 0 1.0396  0.4306 0 0.1783"></Coordinate>
+                                                                </IndexedFaceSet>
+                                                            </Shape> 
+                                                        </Transform>
+                                                    </Transform>
+                                                    <Transform DEF="part_down_left_122" translation="-5.6569 0 -2.3431">
+                                                        <Transform DEF="part_down_left_1221" translation="4.4307 0 2.9604">
+                                                            <Shape>
+                                                                <Appearance USE="AP"></Appearance>
+                                                                <IndexedFaceSet solid="false" coordIndex="0 1 2 -1">
+                                                                    <Coordinate point="0 0 0  -4.4307 0 -2.9604  -0.4307 0 1.0396"></Coordinate>
+                                                                </IndexedFaceSet>
+                                                            </Shape> 
+                                                        </Transform>
+                                                        <Transform DEF="part_down_left_1222" translation="4.4307 0 2.9604">
+                                                            <Shape>
+                                                                <Appearance USE="AP"></Appearance>
+                                                                <IndexedFaceSet solid="false" coordIndex="0 1 2 -1">
+                                                                    <Coordinate point="0 0 0  -0.4307 0 1.0396  0.3649 0 0.2440"></Coordinate>
+                                                                </IndexedFaceSet>
+                                                            </Shape> 
+                                                        </Transform>
+                                                    </Transform>
+                                                </Transform> 
+                                                </Transform>
+                                            </Transform>
+                                        </Transform>
+                                        <Transform DEF="part_down_left_2">
+                                            <Transform DEF="part_down_left1_2">
+                                                <Transform DEF="part_down_left_21" translation="-2.3431 0 2.3431">
+                                                    <Transform DEF="part_down_left_211" translation="1.0158 0 -1.0158">
+                                                        <Shape>
+                                                            <Appearance USE="AP"></Appearance>
+                                                            <IndexedFaceSet solid="false" coordIndex="0 1 2 -1">
+                                                                <Coordinate point="0 0 0  -1.0158 0 1.0158  0.1985 0 1.0158"></Coordinate>
+                                                            </IndexedFaceSet>
+                                                        </Shape> 
+                                                    </Transform>
+                                                    <Transform DEF="part_down_left_212" translation="2.3431 0 -2.3431">
+                                                        <Shape>
+                                                            <Appearance USE="AP"></Appearance>
+                                                            <IndexedFaceSet solid="false" coordIndex="0 1 2 3 -1">
+                                                                <Coordinate point="0 0 0  -1.3273 0 1.3273  -1.1252 0 2.3431  0 0 2.3431"></Coordinate>
+                                                            </IndexedFaceSet>
+                                                        </Shape>
+                                                    </Transform>
+                                                </Transform>
+                                                <Transform DEF="part_down_left_22" translation="-2.3431 0 2.3431">
+                                                    <Transform DEF="part_down_left_221" translation="1.2179 0 0">
+                                                        <Shape>
+                                                            <Appearance USE="AP"></Appearance>
+                                                            <IndexedFaceSet solid="false" coordIndex="0 1 2 -1">
+                                                                <Coordinate point="0 0 0  -1.2179 0 0  -0.3951 0 1.9865"></Coordinate>
+                                                            </IndexedFaceSet>
+                                                        </Shape> 
+                                                    </Transform>
+                                                    <Transform DEF="part_down_left_222"  translation="0.8223 0 1.9865">
+                                                        <Shape>
+                                                            <Appearance USE="AP"></Appearance>
+                                                            <IndexedFaceSet solid="false" coordIndex="0 1 2 3 -1">
+                                                                <Coordinate point="0 0 0  1.5203 0 0  1.5203 0 -1.9865  0.3951 0 -1.9865"></Coordinate>
+                                                            </IndexedFaceSet>
+                                                        </Shape>
+                                                    </Transform>
+                                                    <Transform DEF="part_down_left_223"  translation="0.8223 0 1.9865">
+                                                        <Shape>
+                                                            <Appearance USE="AP"></Appearance>
+                                                            <IndexedFaceSet solid="false" coordIndex="0 1 2 -1">
+                                                                <Coordinate point="0 0 0   1.5203 0 3.6704  1.5203 0 0"></Coordinate>
+                                                            </IndexedFaceSet>
+                                                        </Shape>
+                                                    </Transform>
+                                                </Transform>
+                                                <Transform DEF="part_down_left_23" translation="-2.3431 0 2.3431">
+                                                    <Transform DEF="part_down_left1_23">
+                                                        <Transform DEF="part_down_left2_23">
+                                                    <Transform DEF="part_down_left_231" translation="0.8223 0 1.9865">
+                                                        <Shape>
+                                                            <Appearance USE="AP"></Appearance>
+                                                            <IndexedFaceSet solid="false" coordIndex="0 1 2 -1">
+                                                                <Coordinate point="0 0 0  -0.8223 0 -1.9865  -1.6841 0 -1.1252"></Coordinate>
+                                                            </IndexedFaceSet>
+                                                        </Shape> 
+                                                    </Transform>
+                                                    <Transform DEF="part_down_left_232" translation="0.8223 0 1.9865">
+                                                        <Shape>
+                                                            <Appearance USE="AP"></Appearance>
+                                                            <IndexedFaceSet solid="false" coordIndex="0 1 2 3 -1">
+                                                                <Coordinate point="0 0 0  -1.6841 0 -1.1252  -2.4797 0 -0.3296  -1.0751 0 1.0751"></Coordinate>
+                                                            </IndexedFaceSet>
+                                                        </Shape>
+                                                    </Transform>
+                                                    <Transform DEF="part_down_left_233"  translation="0.8223 0 1.9865">
+                                                        <Shape>
+                                                            <Appearance USE="AP"></Appearance>
+                                                            <IndexedFaceSet solid="false" coordIndex="0 1 2 -1">
+                                                                <Coordinate point="0 0 0   -1.0751 0 1.0751  1.5203 0 3.6704"></Coordinate>
+                                                            </IndexedFaceSet>
+                                                        </Shape>
+                                                    </Transform>
+                                                </Transform>
+                                                    </Transform>
+                                                </Transform>
+                                            </Transform>
+                                        </Transform>
+                                    </Transform>
+                                </Transform>
+                            </Transform>
+                                <Transform DEF="part_down_right">
+                                <Transform DEF="part_down_right1">
+                                    <Transform DEF="part_down_right2">
+                                <Transform DEF="part_down_right_1">
+                                    <Transform DEF="part_down_right1_1">
+                                    <Transform DEF="part_down_right_11">
+                                        <Transform DEF="part_down_right_111" translation="8 0 0">
+                                            <Transform DEF="part_down_right_1111" translation="-5.6569 0 0">
+                                                <Shape>
+                                                    <Appearance USE="AP_contrary"></Appearance>
+                                                    <IndexedFaceSet solid="false" coordIndex="0 1 2 3 -1">
+                                                        <Coordinate point="0 0 0   3.6569 0 0  3.9887 0 0.3318  0.4306 0 1.0396"></Coordinate>
+                                                    </IndexedFaceSet>
+                                                </Shape>
+                                                <Transform DEF="part_down_right_1111_beak" translation="3.6569 0 0">
+                                                    <Shape>
+                                                        <Appearance USE="AP_contrary"></Appearance>
+                                                        <IndexedFaceSet solid="false" coordIndex="0 1 2 -1">
+                                                            <Coordinate point="0 0 0  2 0 0   0.3318 0 0.3318"></Coordinate>
+                                                        </IndexedFaceSet>
+                                                    </Shape>
+                                                </Transform>
+                                            </Transform>
+                                            <Transform DEF="part_down_right_1112" translation="-5.6569 0 0">
+                                                <Shape>
+                                                    <Appearance USE="AP_contrary"></Appearance>
+                                                    <IndexedFaceSet solid="false" coordIndex="0 1 2 -1">
+                                                        <Coordinate point="0 0 0  0.4306 0 1.0396  0 0 1.1252"></Coordinate>
+                                                    </IndexedFaceSet>
+                                                </Shape>
+                                            </Transform>
+                                            <Transform DEF="part_down_right_1113" translation="-5.6569 0 0">
+                                                <Shape>
+                                                    <Appearance USE="AP_contrary"></Appearance>
+                                                    <IndexedFaceSet solid="false" coordIndex="0 1 2 3 -1">
+                                                        <Coordinate point="0 0 0  0 0 1.1252  -1.0158 0 1.3273  -2.3431 0 0"></Coordinate>
+                                                    </IndexedFaceSet> 
+                                                </Shape>
+                                            </Transform>
+                                        </Transform>
+                                        <Transform DEF="part_down_right_112" translation="8 0 0">
+                                            <Transform DEF="part_down_right_1121" translation="-5.2263 0 1.0396">
+                                                <Shape>
+                                                    <Appearance USE="AP_contrary"></Appearance>
+                                                    <IndexedFaceSet solid="false" coordIndex="0 1 2 3 -1">
+                                                        <Coordinate point="0 0 0  3.5581 0 -0.7078  3.3785 0 -0.2742  0 0 1.1252"></Coordinate>
+                                                    </IndexedFaceSet>  
+                                                </Shape>
+                                                <Transform DEF="part_down_right_1121_beak" translation="3.5581 0 -0.7078">
+                                                    <Shape>
+                                                        <Appearance USE="AP_contrary"></Appearance>
+                                                        <IndexedFaceSet solid="false" coordIndex="0 1 2 -1">
+                                                            <Coordinate point="0 0 0  1.6682 0 -0.3318  -0.1796 0 0.4336"></Coordinate>
+                                                        </IndexedFaceSet>
+                                                    </Shape>
+                                                </Transform>
+                                               
+                                            </Transform>
+                                            <Transform DEF="part_down_right_1122" translation="-5.2263 0 1.0396">
+                                                <Shape>
+                                                    <Appearance USE="AP_contrary"></Appearance>
+                                                    <IndexedFaceSet solid="false" coordIndex="0 1 2 3 -1">
+                                                        <Coordinate point="0 0 0  0 0 1.1252  -0.4306 0 1.3035  -0.4306 0 0.0856"></Coordinate>
+                                                    </IndexedFaceSet>
+                                                </Shape>
+                                            </Transform>
+                                            <Transform DEF="part_down_right_1123" translation="-5.6569 0 1.1252">
+                                                <Shape>
+                                                    <Appearance USE="AP_contrary"></Appearance>
+                                                    <IndexedFaceSet solid="false" coordIndex="0 1 2 -1">
+                                                        <Coordinate point="0 0 0  0 0 1.2179  -1.0158 0 0.2021"></Coordinate>
+                                                    </IndexedFaceSet>
+                                                </Shape>
+                                            </Transform>
+                                        </Transform>
+                                    </Transform>
+                                    <Transform DEF="part_down_right_12" translation="2.3431 0 2.3431">
+                                        <Transform DEF="part_down_right1_12">
+                                        <Transform DEF="part_down_right_121" translation="5.6569 0 -2.3431">
+                                            <Transform DEF="part_down_right_1211"  translation="-5.2263 0 2.1648">
+                                                <Shape>
+                                                    <Appearance USE="AP_contrary"></Appearance>
+                                                    <IndexedFaceSet solid="false" coordIndex="0 1 2 3 -1">
+                                                        <Coordinate point="0 0 0  3.3785 0 -1.3994  3.8121 0 -1.2199  0.7956 0 0.7956"></Coordinate>
+                                                    </IndexedFaceSet>
+                                                </Shape>
+                                                <Transform DEF="part_down_right_1211_beak"  translation="3.3785 0 -1.3994">
+                                                    <Shape>
+                                                        <Appearance USE="AP_contrary"></Appearance>
+                                                        <IndexedFaceSet solid="false" coordIndex="0 1 2 -1">
+                                                            <Coordinate point="0 0 0  1.8478 0 -0.7654  0.4336 0 0.1795"></Coordinate>
+                                                        </IndexedFaceSet>
+                                                    </Shape> 
+                                                </Transform>
+                                            </Transform>
+                                            <Transform DEF="part_down_right_1212"  translation="-5.2263 0 2.1648">
+                                                <Shape>
+                                                    <Appearance USE="AP_contrary"></Appearance>
+                                                    <IndexedFaceSet solid="false" coordIndex="0 1 2 3 -1">
+                                                        <Coordinate point="0 0 0  0.7956 0 0.7956  0.4307 0 1.0396  -0.4306 0 0.1783"></Coordinate>
+                                                    </IndexedFaceSet>
+                                                </Shape> 
+                                            </Transform>
+                                        </Transform>
+                                        <Transform DEF="part_down_right_122" translation="5.6569 0 -2.3431">
+                                            <Transform DEF="part_down_right_1221" translation="-4.4307 0 2.9604">
+                                                <Shape>
+                                                    <Appearance USE="AP_contrary"></Appearance>
+                                                    <IndexedFaceSet solid="false" coordIndex="0 1 2 3 -1">
+                                                        <Coordinate point="0 0 0  3.0165 0 -2.0155  3.0165 0 -1.5462  0.4307 0 1.0396"></Coordinate>
+                                                    </IndexedFaceSet>
+                                                </Shape> 
+                                                <Transform DEF="part_down_right_1221_beak" translation="3.0165 0 -2.0155">
+                                                    <Shape>
+                                                        <Appearance USE="AP_contrary"></Appearance>
+                                                        <IndexedFaceSet solid="false" coordIndex="0 1 2 -1">
+                                                            <Coordinate point="0 0 0  1.4142 0 -0.9449  0 0 0.4693"></Coordinate>
+                                                        </IndexedFaceSet>
+                                                    </Shape> 
+                                                </Transform>
+                                            </Transform>
+                                            <Transform DEF="part_down_right_1222" translation="-4.4307 0 2.9604">
+                                                <Shape>
+                                                    <Appearance USE="AP_contrary"></Appearance>
+                                                    <IndexedFaceSet solid="false" coordIndex="0 1 2 -1">
+                                                        <Coordinate point="0 0 0  0.4307 0 1.0396  -0.3649 0 0.2440"></Coordinate>
+                                                    </IndexedFaceSet>
+                                                </Shape> 
+                                            </Transform>
+                                        </Transform>
+                                    </Transform> 
+                                    </Transform>
+                                </Transform>
+                                </Transform>
+                                <Transform DEF="part_down_right_2">
+                                    <Transform DEF="part_down_right1_2">
+                                        <Transform DEF="part_down_right_21" translation="2.3431 0 2.3431" >
+                                            <Transform DEF="part_down_right_211" translation="-1.0158 0 -1.0158">
+                                            <Shape>
+                                                <Appearance USE="AP_contrary"></Appearance>
+                                                <IndexedFaceSet solid="false" coordIndex="0 1 2 -1">
+                                                    <Coordinate point="0 0 0  1.0158 0 1.0158  -0.1985 0 1.0158"></Coordinate>
+                                                </IndexedFaceSet>
+                                            </Shape> 
+                                        </Transform>
+                                            <Transform DEF="part_down_right_212" translation="-2.3431 0 -2.3431">
+                                            <Shape>
+                                                <Appearance USE="AP_contrary"></Appearance>
+                                                <IndexedFaceSet solid="false" coordIndex="0 1 2 3 -1">
+                                                    <Coordinate point="0 0 0  1.3273 0 1.3273  1.1252 0 2.3431  0 0 2.3431"></Coordinate>
+                                                </IndexedFaceSet>
+                                            </Shape>
+                                        </Transform>
+                                    </Transform>
+                                    <Transform DEF="part_down_right_22" translation="2.3431 0 2.3431">
+                                        <Transform DEF="part_down_right_221" translation="-1.2179 0 0">
+                                            <Shape>
+                                                <Appearance USE="AP_contrary"></Appearance>
+                                                <IndexedFaceSet solid="false" coordIndex="0 1 2 -1">
+                                                    <Coordinate point="0 0 0  1.2179 0 0  0.3951 0 1.9865"></Coordinate>
+                                                </IndexedFaceSet>
+                                            </Shape> 
+                                        </Transform>
+                                        <Transform DEF="part_down_right_222"  translation="-0.8223 0 1.9865">
+                                            <Shape>
+                                                <Appearance USE="AP_contrary"></Appearance>
+                                                <IndexedFaceSet solid="false" coordIndex="0 1 2 3 -1">
+                                                    <Coordinate point="0 0 0  -1.5203 0 0  -1.5203 0 -1.9865  -0.3951 0 -1.9865"></Coordinate>
+                                                </IndexedFaceSet>
+                                            </Shape>
+                                        </Transform>
+                                        <Transform DEF="part_down_right_223"  translation="-0.8223 0 1.9865">
+                                            <Shape>
+                                                <Appearance USE="AP_contrary"></Appearance>
+                                                <IndexedFaceSet solid="false" coordIndex="0 1 2 -1">
+                                                    <Coordinate point="0 0 0   -1.5203 0 3.6704  -1.5203 0 0"></Coordinate>
+                                                </IndexedFaceSet>
+                                            </Shape>
+                                        </Transform>
+                                    </Transform>
+                                    <Transform DEF="part_down_right_23" translation="2.3431 0 2.3431">
+                                        <Transform DEF="part_down_right1_23">
+                                            <Transform DEF="part_down_right2_23">
+                                        <Transform DEF="part_down_right_231" translation="-0.8223 0 1.9865">
+                                            <Shape>
+                                                <Appearance USE="AP_contrary"></Appearance>
+                                                <IndexedFaceSet solid="false" coordIndex="0 1 2 -1">
+                                                    <Coordinate point="0 0 0  0.8223 0 -1.9865  1.6841 0 -1.1252"></Coordinate>
+                                                </IndexedFaceSet>
+                                            </Shape> 
+                                        </Transform>
+                                        <Transform DEF="part_down_right_232" translation="-0.8223 0 1.9865">
+                                            <Shape>
+                                                <Appearance USE="AP_contrary"></Appearance>
+                                                <IndexedFaceSet solid="false" coordIndex="0 1 2 3 -1">
+                                                    <Coordinate point="0 0 0  1.6841 0 -1.1252  2.4797 0 -0.3296  1.0751 0 1.0751"></Coordinate>
+                                                </IndexedFaceSet>
+                                            </Shape>
+                                        </Transform>
+                                        <Transform DEF="part_down_right_233"  translation="-0.8223 0 1.9865">
+                                            <Shape>
+                                                <Appearance USE="AP_contrary"></Appearance>
+                                                <IndexedFaceSet solid="false" coordIndex="0 1 2 -1">
+                                                    <Coordinate point="0 0 0   1.0751 0 1.0751  -1.5203 0 3.6704"></Coordinate>
+                                                </IndexedFaceSet>
+                                            </Shape>
+                                        </Transform>
+                                    </Transform>
+                                        </Transform>
+                                    </Transform>
+                                </Transform>
+                                </Transform>
+                                    </Transform>
+                                </Transform>
+                            </Transform>
+                            </Transform>
+                            </Transform>
+                        </Transform>
+                        <!-- define a time trigger -->
+                        <TimeSensor DEF="time" cycleInterval="30" loop="true"></TimeSensor>
+                        <!-- define the key positions during the movement and the routes, along which events are propagated according to the event model-->
+                        <OrientationInterpolator DEF="move_step1_1" key="0  0.025  0.05" keyvalue="0 0 0 0  1 0 0 1.57  0 0 0 0"> </OrientationInterpolator>
+                        <OrientationInterpolator DEF="move_step1_2" key="0  0.025  0.05" keyvalue="0 0 0 0  -1 0 0 1.57  0 0 0 0"> </OrientationInterpolator>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_step1_1" toField="set_fraction"></Route>
+                        <Route fromNode="move_step1_1" fromField="value_changed" toNode="part_up" toField="rotation"></Route>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_step1_2" toField="set_fraction"></Route>
+                        <Route fromNode="move_step1_2" fromField="value_changed" toNode="part_down" toField="rotation"></Route>
+                        <OrientationInterpolator DEF="move_step1_3" key="0.05  0.075  0.1" keyvalue="0 0 0 0  0 0 1 1.57  0 0 0 0"> </OrientationInterpolator>
+                        <OrientationInterpolator DEF="move_step1_4" key="0.05  0.075  0.1" keyvalue="0 0 0 0  0 0 -1 1.57  0 0 0 0"> </OrientationInterpolator>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_step1_3" toField="set_fraction"></Route>
+                        <Route fromNode="move_step1_3" fromField="value_changed" toNode="part_up_right" toField="rotation"></Route>
+                        <Route fromNode="move_step1_3" fromField="value_changed" toNode="part_down_right" toField="rotation"></Route>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_step1_4" toField="set_fraction"></Route>
+                        <Route fromNode="move_step1_4" fromField="value_changed" toNode="part_up_left" toField="rotation"></Route>
+                        <Route fromNode="move_step1_4" fromField="value_changed" toNode="part_down_left" toField="rotation"></Route>
+                        
+                        <OrientationInterpolator DEF="move_step2_1" key="0.1  0.125  0.15" keyvalue="0 0 0 0  -1 0 1 1.57  0 0 0 0"> </OrientationInterpolator>
+                        <OrientationInterpolator DEF="move_step2_2" key="0.1  0.125  0.15" keyvalue="0 0 0 0  1 0 -1 1.57  0 0 0 0"> </OrientationInterpolator>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_step2_1" toField="set_fraction"></Route>
+                        <Route fromNode="move_step2_1" fromField="value_changed" toNode="part_up_left1" toField="rotation"></Route>
+                        <Route fromNode="move_step2_1" fromField="value_changed" toNode="part_down_left_1" toField="rotation"></Route>
+                        <Route fromNode="move_step2_1" fromField="value_changed" toNode="part_up_right_2" toField="rotation"></Route>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_step2_2" toField="set_fraction"></Route>
+                        <Route fromNode="move_step2_2" fromField="value_changed" toNode="part_down_right1" toField="rotation"></Route>
+                        <Route fromNode="move_step2_2" fromField="value_changed" toNode="part_down_left_2" toField="rotation"></Route>
+                        <Route fromNode="move_step2_2" fromField="value_changed" toNode="part_up_right_1" toField="rotation"></Route>
+                        <OrientationInterpolator DEF="move_step2_3" key="0.15  0.175  0.2" keyvalue="0 0 0 0  -1 0 -1 1.57  0 0 0 0"> </OrientationInterpolator>
+                        <OrientationInterpolator DEF="move_step2_4" key="0.15  0.175  0.2" keyvalue="0 0 0 0  1 0 1 1.57  0 0 0 0"> </OrientationInterpolator>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_step2_3" toField="set_fraction"></Route>
+                        <Route fromNode="move_step2_3" fromField="value_changed" toNode="part_up_right1" toField="rotation"></Route>
+                        <Route fromNode="move_step2_3" fromField="value_changed" toNode="part_up_left_2" toField="rotation"></Route>
+                        <Route fromNode="move_step2_3" fromField="value_changed" toNode="part_down_right_1" toField="rotation"></Route>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_step2_4" toField="set_fraction"></Route>
+                        <Route fromNode="move_step2_4" fromField="value_changed" toNode="part_down_left1" toField="rotation"></Route>
+                        <Route fromNode="move_step2_4" fromField="value_changed" toNode="part_up_left_1" toField="rotation"></Route>
+                        <Route fromNode="move_step2_4" fromField="value_changed" toNode="part_down_right_2" toField="rotation"></Route>
+                        
+                        <OrientationInterpolator DEF="move_step3_1" key="0.2  0.3" keyvalue="0 0 0 0  -1 0 0 1.57"> </OrientationInterpolator>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_step3_1" toField="set_fraction"></Route>
+                        <Route fromNode="move_step3_1" fromField="value_changed" toNode="part_up1" toField="rotation"></Route>
+                        <OrientationInterpolator DEF="move_step3_2" key="0.2  0.3" keyvalue="0 0 0 0  1 0 0 1.57"> </OrientationInterpolator>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_step3_2" toField="set_fraction"></Route>
+                        <Route fromNode="move_step3_2" fromField="value_changed" toNode="part_down1" toField="rotation"></Route>
+                        <OrientationInterpolator DEF="move_step3_3"
+                            key="0.2000  0.2050  0.2100  0.2150  0.2200  0.2250  0.2300  0.2350  0.2400  0.2450  0.2500  0.2550  0.2600  0.2650  0.2700  0.2750  0.2800  0.2850  0.2900  0.2950  0.3000"
+                            keyvalue="1 0 1 0.0000  1 0 1 0.2216  1 0 1 0.4405  1 0 1 0.6543  1 0 1 0.8611  1 0 1 1.0593  1 0 1 1.2482  1 0 1 1.4275  1 0 1 1.5972  1 0 1 1.7578  1 0 1 1.9099  1 0 1 2.0542  1 0 1 2.1916  1 0 1 2.3230  1 0 1 2.4491  1 0 1 2.5708  1 0 1 2.6890  1 0 1 2.8043  1 0 1 2.9175  1 0 1 3.0293  1 0 1 3.1405"> </OrientationInterpolator>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_step3_3" toField="set_fraction"></Route>
+                        <Route fromNode="move_step3_3" fromField="value_changed" toNode="part_up_left1_1" toField="rotation"></Route>
+                        <OrientationInterpolator DEF="move_step3_4"
+                            key="0.2000  0.2050  0.2100  0.2150  0.2200  0.2250  0.2300  0.2350  0.2400  0.2450  0.2500  0.2550  0.2600  0.2650  0.2700  0.2750  0.2800  0.2850  0.2900  0.2950  0.3000"
+                            keyvalue="-1 0 1 0.0000  -1 0 1 0.2216  -1 0 1 0.4405  -1 0 1 0.6543  -1 0 1 0.8611  -1 0 1 1.0593  -1 0 1 1.2482  -1 0 1 1.4275  -1 0 1 1.5972  -1 0 1 1.7578  -1 0 1 1.9099  -1 0 1 2.0542  -1 0 1 2.1916  -1 0 1 2.3230  -1 0 1 2.4491  -1 0 1 2.5708  -1 0 1 2.6890  -1 0 1 2.8043  -1 0 1 2.9175  -1 0 1 3.0293  -1 0 1 3.1405"> </OrientationInterpolator>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_step3_4" toField="set_fraction"></Route>
+                        <Route fromNode="move_step3_4" fromField="value_changed" toNode="part_down_left1_1" toField="rotation"></Route>
+                        <OrientationInterpolator DEF="move_step3_5"
+                            key="0.2000  0.2050  0.2100  0.2150  0.2200  0.2250  0.2300  0.2350  0.2400  0.2450  0.2500  0.2550  0.2600  0.2650  0.2700  0.2750  0.2800  0.2850  0.2900  0.2950  0.3000"
+                            keyvalue="1 0 -1 0.0000  1 0 -1 0.2216  1 0 -1 0.4405  1 0 -1 0.6543  1 0 -1 0.8611  1 0 -1 1.0593  1 0 -1 1.2482  1 0 -1 1.4275  1 0 -1 1.5972  1 0 -1 1.7578  1 0 -1 1.9099  1 0 -1 2.0542  1 0 -1 2.1916  1 0 -1 2.3230  1 0 -1 2.4491  1 0 -1 2.5708  1 0 -1 2.6890  1 0 -1 2.8043  1 0 -1 2.9175  1 0 -1 3.0293  1 0 -1 3.1405"> </OrientationInterpolator>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_step3_5" toField="set_fraction"></Route>
+                        <Route fromNode="move_step3_5" fromField="value_changed" toNode="part_up_right1_1" toField="rotation"></Route>
+                        <OrientationInterpolator DEF="move_step3_6"
+                            key="0.2000  0.2050  0.2100  0.2150  0.2200  0.2250  0.2300  0.2350  0.2400  0.2450  0.2500  0.2550  0.2600  0.2650  0.2700  0.2750  0.2800  0.2850  0.2900  0.2950  0.3000"
+                            keyvalue="-1 0 -1 0.0000  -1 0 -1 0.2216  -1 0 -1 0.4405  -1 0 -1 0.6543  -1 0 -1 0.8611  -1 0 -1 1.0593  -1 0 -1 1.2482  -1 0 -1 1.4275  -1 0 -1 1.5972  -1 0 -1 1.7578  -1 0 -1 1.9099  -1 0 -1 2.0542  -1 0 -1 2.1916  -1 0 -1 2.3230  -1 0 -1 2.4491  -1 0 -1 2.5708  -1 0 -1 2.6890  -1 0 -1 2.8043  -1 0 -1 2.9175  -1 0 -1 3.0293  -1 0 -1 3.1405"> </OrientationInterpolator>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_step3_6" toField="set_fraction"></Route>
+                        <Route fromNode="move_step3_6" fromField="value_changed" toNode="part_down_right1_1" toField="rotation"></Route>  
+                        
+                        <OrientationInterpolator DEF="move_step4_1" key="0.3 0.35 0.4" keyvalue="0 0 0 0  -5.6569 0 2.3431 3  0 0 0 0"> </OrientationInterpolator>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_step4_1" toField="set_fraction"></Route>
+                        <Route fromNode="move_step4_1" fromField="value_changed" toNode="part_up_left_12" toField="rotation"></Route>
+                        <OrientationInterpolator DEF="move_step4_2" key="0.3 0.35 0.4" keyvalue="0 0 0 0  2.3431 0 -5.6569 3.1  0 0 0 0"> </OrientationInterpolator>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_step4_2" toField="set_fraction"></Route>
+                        <Route fromNode="move_step4_2" fromField="value_changed" toNode="part_up_left_23" toField="rotation"></Route>
+                        <OrientationInterpolator DEF="move_step4_3" key="0.3 0.35 0.4" keyvalue="0 0 0 0  -5.6569 0 -2.3431 3  0 0 0 0"> </OrientationInterpolator>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_step4_3" toField="set_fraction"></Route>
+                        <Route fromNode="move_step4_3" fromField="value_changed" toNode="part_up_right_12" toField="rotation"></Route>
+                        <OrientationInterpolator DEF="move_step4_4" key="0.3 0.35 0.4" keyvalue="0 0 0 0  2.3431 0 5.6569 3.1  0 0 0 0"> </OrientationInterpolator>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_step4_4" toField="set_fraction"></Route>
+                        <Route fromNode="move_step4_4" fromField="value_changed" toNode="part_up_right_23" toField="rotation"></Route>
+                        <OrientationInterpolator DEF="move_step4_5" key="0.3 0.35 0.4" keyvalue="0 0 0 0  5.6569 0 2.3431 3  0 0 0 0"> </OrientationInterpolator>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_step4_5" toField="set_fraction"></Route>
+                        <Route fromNode="move_step4_5" fromField="value_changed" toNode="part_down_left_12" toField="rotation"></Route>
+                        <OrientationInterpolator DEF="move_step4_6" key="0.3 0.35 0.4" keyvalue="0 0 0 0  -2.3431 0 -5.6569 3.1  0 0 0 0"> </OrientationInterpolator>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_step4_6" toField="set_fraction"></Route>
+                        <Route fromNode="move_step4_6" fromField="value_changed" toNode="part_down_left_23" toField="rotation"></Route>
+                        <OrientationInterpolator DEF="move_step4_7" key="0.3 0.35 0.4" keyvalue="0 0 0 0  5.6569 0 -2.3431 3  0 0 0 0"> </OrientationInterpolator>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_step4_7" toField="set_fraction"></Route>
+                        <Route fromNode="move_step4_7" fromField="value_changed" toNode="part_down_right_12" toField="rotation"></Route>
+                        <OrientationInterpolator DEF="move_step4_8" key="0.3 0.35 0.4" keyvalue="0 0 0 0  -2.3431 0 5.6569 3.1  0 0 0 0"> </OrientationInterpolator>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_step4_8" toField="set_fraction"></Route>
+                        <Route fromNode="move_step4_8" fromField="value_changed" toNode="part_down_right_23" toField="rotation"></Route>
+                        
+                        <OrientationInterpolator DEF="move_step5_1" key="0.4  0.425  0.45  0.475  0.5" keyvalue="0 0 0 0  -1 0 0 3.1415  0 0 0 0  1 0 0 3.1415  0 0 0 0"> </OrientationInterpolator>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_step5_1" toField="set_fraction"></Route>
+                        <Route fromNode="move_step5_1" fromField="value_changed" toNode="part_up_left_21" toField="rotation"></Route>
+                        <Route fromNode="move_step5_1" fromField="value_changed" toNode="part_up_right_21" toField="rotation"></Route>
+                        <Route fromNode="move_step5_1" fromField="value_changed" toNode="part_down_left_21" toField="rotation"></Route>
+                        <Route fromNode="move_step5_1" fromField="value_changed" toNode="part_down_right_21" toField="rotation"></Route>
+                        <OrientationInterpolator DEF="move_step5_2" key="0.4  0.425  0.45  0.475  0.5" keyvalue="0 0 0 0  0 0 -1 3.1  0 0 0 0  0 0 1 3.1 0 0 0 0"> </OrientationInterpolator>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_step5_2" toField="set_fraction"></Route>
+                        <Route fromNode="move_step5_2" fromField="value_changed" toNode="part_up_left_1113" toField="rotation"></Route>
+                        <Route fromNode="move_step5_2" fromField="value_changed" toNode="part_up_left_1123" toField="rotation"></Route>
+                        <Route fromNode="move_step5_2" fromField="value_changed" toNode="part_down_right_1113" toField="rotation"></Route>
+                        <Route fromNode="move_step5_2" fromField="value_changed" toNode="part_down_right_1123" toField="rotation"></Route>
+                        <OrientationInterpolator DEF="move_step5_3" key="0.4  0.425  0.45  0.475  0.5" keyvalue="0 0 0 0  0 0 1 3.1  0 0 0 0  0 0 -1 3.1 0 0 0 0"> </OrientationInterpolator>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_step5_3" toField="set_fraction"></Route>
+                        <Route fromNode="move_step5_3" fromField="value_changed" toNode="part_down_left_1113" toField="rotation"></Route>
+                        <Route fromNode="move_step5_3" fromField="value_changed" toNode="part_down_left_1123" toField="rotation"></Route>
+                        <Route fromNode="move_step5_3" fromField="value_changed" toNode="part_up_right_1113" toField="rotation"></Route>
+                        <Route fromNode="move_step5_3" fromField="value_changed" toNode="part_up_right_1123" toField="rotation"></Route>
+                        
+                        <OrientationInterpolator DEF="move_step6_1" key="0.5  0.6"
+                            keyvalue="0 0 0 0  1 0 0 3.14"> </OrientationInterpolator>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_step6_1" toField="set_fraction"></Route>
+                        <Route fromNode="move_step6_1" fromField="value_changed" toNode="part_up_left_22" toField="rotation"></Route>
+                        <Route fromNode="move_step6_1" fromField="value_changed" toNode="part_up_left1_23" toField="rotation"></Route>
+                        <Route fromNode="move_step6_1" fromField="value_changed" toNode="part_up_right_22" toField="rotation"></Route>
+                        <Route fromNode="move_step6_1" fromField="value_changed" toNode="part_up_right1_23" toField="rotation"></Route>
+                        <OrientationInterpolator DEF="move_step6_2"
+                            key="0  0.5000  0.5050  0.5100  0.5150  0.5200  0.5250  0.5300  0.5350  0.5400  0.5450  0.5500  0.5550  0.5600  0.5650  0.5700  0.5750  0.5800  0.5850  0.5900  0.5950  0.6000  1"
+                            keyvalue="0 0 0 0  -1.5203 0 3.6704 0 -1.5203 0 3.6704 0.0602 -1.5203 0 3.6704 0.1211 -1.5203 0 3.6704 0.1832 -1.5203 0 3.6704 0.2474 -1.5203 0 3.6704 0.3144 -1.5203 0 3.6704 0.3851 -1.5203 0 3.6704 0.4607 -1.5203 0 3.6704 0.5424 -1.5203 0 3.6704 0.6318 -1.5203 0 3.6704 0.7310 -1.5203 0 3.6704 0.8425 -1.5203 0 3.6704 0.9696 -1.5203 0 3.6704 1.1165 -1.5203 0 3.6704 1.2884 -1.5203 0 3.6704 1.4917 -1.5203 0 3.6704 1.7337 -1.5203 0 3.6704 2.0210 -1.5203 0 3.6704 2.3568 -1.5203 0 3.6704 2.7359 -1.5203 0 3.6704 3.14  -1.5203 0 3.6704 3.14"> </OrientationInterpolator>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_step6_2" toField="set_fraction"></Route>
+                        <Route fromNode="move_step6_2" fromField="value_changed" toNode="part_up_left2_23" toField="rotation"></Route>
+                        <OrientationInterpolator DEF="move_step6_3"
+                            key="0  0.5000  0.5050  0.5100  0.5150  0.5200  0.5250  0.5300  0.5350  0.5400  0.5450  0.5500  0.5550  0.5600  0.5650  0.5700  0.5750  0.5800  0.5850  0.5900  0.5950  0.6000  1"
+                            keyvalue="0 0 0 0  -3.6704 0 1.5203 0 -3.6704 0 1.5203 0.0602 -3.6704 0 1.5203 0.1211 -3.6704 0 1.5203 0.1832 -3.6704 0 1.5203 0.2474 -3.6704 0 1.5203 0.3144 -3.6704 0 1.5203 0.3851 -3.6704 0 1.5203 0.4607 -3.6704 0 1.5203 0.5424 -3.6704 0 1.5203 0.6318 -3.6704 0 1.5203 0.7310 -3.6704 0 1.5203 0.8425 -3.6704 0 1.5203 0.9696 -3.6704 0 1.5203 1.1165 -3.6704 0 1.5203 1.2884 -3.6704 0 1.5203 1.4917 -3.6704 0 1.5203 1.7337 -3.6704 0 1.5203 2.0210 -3.6704 0 1.5203 2.3568 -3.6704 0 1.5203 2.7359 -3.6704 0 1.5203 3.14  -3.6704 0 1.5203 3.14"> </OrientationInterpolator>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_step6_3" toField="set_fraction"></Route>
+                        <Route fromNode="move_step6_3" fromField="value_changed" toNode="part_up_left1_12" toField="rotation"></Route>
+                        <OrientationInterpolator DEF="move_step6_4"
+                            key="0  0.5000  0.5050  0.5100  0.5150  0.5200  0.5250  0.5300  0.5350  0.5400  0.5450  0.5500  0.5550  0.5600  0.5650  0.5700  0.5750  0.5800  0.5850  0.5900  0.5950  0.6000  1"
+                            keyvalue="0 0 0 0  -1.5203 0 -3.6704 0 -1.5203 0 -3.6704 0.0602 -1.5203 0 -3.6704 0.1211 -1.5203 0 -3.6704 0.1832 -1.5203 0 -3.6704 0.2474 -1.5203 0 -3.6704 0.3144 -1.5203 0 -3.6704 0.3851 -1.5203 0 -3.6704 0.4607 -1.5203 0 -3.6704 0.5424 -1.5203 0 -3.6704 0.6318 -1.5203 0 -3.6704 0.7310 -1.5203 0 -3.6704 0.8425 -1.5203 0 -3.6704 0.9696 -1.5203 0 -3.6704 1.1165 -1.5203 0 -3.6704 1.2884 -1.5203 0 -3.6704 1.4917 -1.5203 0 -3.6704 1.7337 -1.5203 0 -3.6704 2.0210 -1.5203 0 -3.6704 2.3568 -1.5203 0 -3.6704 2.7359 -1.5203 0 -3.6704 3.14  -1.5203 0 -3.6704 3.14"> </OrientationInterpolator>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_step6_4" toField="set_fraction"></Route>
+                        <Route fromNode="move_step6_4" fromField="value_changed" toNode="part_up_right2_23" toField="rotation"></Route>
+                        <OrientationInterpolator DEF="move_step6_5"
+                            key="0  0.5000  0.5050  0.5100  0.5150  0.5200  0.5250  0.5300  0.5350  0.5400  0.5450  0.5500  0.5550  0.5600  0.5650  0.5700  0.5750  0.5800  0.5850  0.5900  0.5950  0.6000  1"
+                            keyvalue="0 0 0 0  -3.6704 0 -1.5203 0 -3.6704 0 -1.5203 0.0602 -3.6704 0 -1.5203 0.1211 -3.6704 0 -1.5203 0.1832 -3.6704 0 -1.5203 0.2474 -3.6704 0 -1.5203 0.3144 -3.6704 0 -1.5203 0.3851 -3.6704 0 -1.5203 0.4607 -3.6704 0 -1.5203 0.5424 -3.6704 0 -1.5203 0.6318 -3.6704 0 -1.5203 0.7310 -3.6704 0 -1.5203 0.8425 -3.6704 0 -1.5203 0.9696 -3.6704 0 -1.5203 1.1165 -3.6704 0 -1.5203 1.2884 -3.6704 0 -1.5203 1.4917 -3.6704 0 -1.5203 1.7337 -3.6704 0 -1.5203 2.0210 -3.6704 0 -1.5203 2.3568 -3.6704 0 -1.5203 2.7359 -3.6704 0 -1.5203 3.14  -3.6704 0 -1.5203 3.14"> </OrientationInterpolator>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_step6_5" toField="set_fraction"></Route>
+                        <Route fromNode="move_step6_5" fromField="value_changed" toNode="part_up_right1_12" toField="rotation"></Route>
+                        
+                        <OrientationInterpolator DEF="move_step7_1" key="0.5  0.6" keyvalue="0 0 0 0  -1 0 0 3.14"> </OrientationInterpolator>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_step7_1" toField="set_fraction"></Route>
+                        <Route fromNode="move_step7_1" fromField="value_changed" toNode="part_down_left_22" toField="rotation"></Route>
+                        <Route fromNode="move_step7_1" fromField="value_changed" toNode="part_down_left1_23" toField="rotation"></Route>
+                        <Route fromNode="move_step7_1" fromField="value_changed" toNode="part_down_right_22" toField="rotation"></Route>
+                        <Route fromNode="move_step7_1" fromField="value_changed" toNode="part_down_right1_23" toField="rotation"></Route>
+                        <OrientationInterpolator DEF="move_step7_2"
+                            key="0  0.5000  0.5050  0.5100  0.5150  0.5200  0.5250  0.5300  0.5350  0.5400  0.5450  0.5500  0.5550  0.5600  0.5650  0.5700  0.5750  0.5800  0.5850  0.5900  0.5950  0.6000  1"
+                            keyvalue="0 0 0 0   1.5203 0 3.6704 0  1.5203 0 3.6704 0.0602  1.5203 0 3.6704 0.1211  1.5203 0 3.6704 0.1832  1.5203 0 3.6704 0.2474  1.5203 0 3.6704 0.3144  1.5203 0 3.6704 0.3851  1.5203 0 3.6704 0.4607  1.5203 0 3.6704 0.5424  1.5203 0 3.6704 0.6318  1.5203 0 3.6704 0.7310  1.5203 0 3.6704 0.8425  1.5203 0 3.6704 0.9696  1.5203 0 3.6704 1.1165  1.5203 0 3.6704 1.2884  1.5203 0 3.6704 1.4917  1.5203 0 3.6704 1.7337  1.5203 0 3.6704 2.0210  1.5203 0 3.6704 2.3568  1.5203 0 3.6704 2.7359  1.5203 0 3.6704 3.14   1.5203 0 3.6704 3.14"> </OrientationInterpolator>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_step7_2" toField="set_fraction"></Route>
+                        <Route fromNode="move_step7_2" fromField="value_changed" toNode="part_down_left2_23" toField="rotation"></Route>
+                        <OrientationInterpolator DEF="move_step7_3"
+                            key="0  0.5000  0.5050  0.5100  0.5150  0.5200  0.5250  0.5300  0.5350  0.5400  0.5450  0.5500  0.5550  0.5600  0.5650  0.5700  0.5750  0.5800  0.5850  0.5900  0.5950  0.6000  1"
+                            keyvalue="0 0 0 0   3.6704 0 1.5203 0  3.6704 0 1.5203 0.0602  3.6704 0 1.5203 0.1211  3.6704 0 1.5203 0.1832  3.6704 0 1.5203 0.2474  3.6704 0 1.5203 0.3144  3.6704 0 1.5203 0.3851  3.6704 0 1.5203 0.4607  3.6704 0 1.5203 0.5424  3.6704 0 1.5203 0.6318  3.6704 0 1.5203 0.7310  3.6704 0 1.5203 0.8425  3.6704 0 1.5203 0.9696  3.6704 0 1.5203 1.1165  3.6704 0 1.5203 1.2884  3.6704 0 1.5203 1.4917  3.6704 0 1.5203 1.7337  3.6704 0 1.5203 2.0210  3.6704 0 1.5203 2.3568  3.6704 0 1.5203 2.7359  3.6704 0 1.5203 3.14   3.6704 0 1.5203 3.14"> </OrientationInterpolator>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_step7_3" toField="set_fraction"></Route>
+                        <Route fromNode="move_step7_3" fromField="value_changed" toNode="part_down_left1_12" toField="rotation"></Route>
+                        <OrientationInterpolator DEF="move_step7_4"
+                            key="0  0.5000  0.5050  0.5100  0.5150  0.5200  0.5250  0.5300  0.5350  0.5400  0.5450  0.5500  0.5550  0.5600  0.5650  0.5700  0.5750  0.5800  0.5850  0.5900  0.5950  0.6000  1"
+                            keyvalue="0 0 0 0   1.5203 0 -3.6704 0  1.5203 0 -3.6704 0.0602  1.5203 0 -3.6704 0.1211  1.5203 0 -3.6704 0.1832  1.5203 0 -3.6704 0.2474  1.5203 0 -3.6704 0.3144  1.5203 0 -3.6704 0.3851  1.5203 0 -3.6704 0.4607  1.5203 0 -3.6704 0.5424  1.5203 0 -3.6704 0.6318  1.5203 0 -3.6704 0.7310  1.5203 0 -3.6704 0.8425  1.5203 0 -3.6704 0.9696  1.5203 0 -3.6704 1.1165  1.5203 0 -3.6704 1.2884  1.5203 0 -3.6704 1.4917  1.5203 0 -3.6704 1.7337  1.5203 0 -3.6704 2.0210  1.5203 0 -3.6704 2.3568  1.5203 0 -3.6704 2.7359  1.5203 0 -3.6704 3.14   1.5203 0 -3.6704 3.14"> </OrientationInterpolator>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_step7_4" toField="set_fraction"></Route>
+                        <Route fromNode="move_step7_4" fromField="value_changed" toNode="part_down_right2_23" toField="rotation"></Route>
+                        <OrientationInterpolator DEF="move_step7_5"
+                            key="0  0.5000  0.5050  0.5100  0.5150  0.5200  0.5250  0.5300  0.5350  0.5400  0.5450  0.5500  0.5550  0.5600  0.5650  0.5700  0.5750  0.5800  0.5850  0.5900  0.5950  0.6000  1"
+                            keyvalue="0 0 0 0   3.6704 0 -1.5203 0  3.6704 0 -1.5203 0.0602  3.6704 0 -1.5203 0.1211  3.6704 0 -1.5203 0.1832  3.6704 0 -1.5203 0.2474  3.6704 0 -1.5203 0.3144  3.6704 0 -1.5203 0.3851  3.6704 0 -1.5203 0.4607  3.6704 0 -1.5203 0.5424  3.6704 0 -1.5203 0.6318  3.6704 0 -1.5203 0.7310  3.6704 0 -1.5203 0.8425  3.6704 0 -1.5203 0.9696  3.6704 0 -1.5203 1.1165  3.6704 0 -1.5203 1.2884  3.6704 0 -1.5203 1.4917  3.6704 0 -1.5203 1.7337  3.6704 0 -1.5203 2.0210  3.6704 0 -1.5203 2.3568  3.6704 0 -1.5203 2.7359  3.6704 0 -1.5203 3.14   3.6704 0 -1.5203 3.14"> </OrientationInterpolator>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_step7_5" toField="set_fraction"></Route>
+                        <Route fromNode="move_step7_5" fromField="value_changed" toNode="part_down_right1_12" toField="rotation"></Route>
+                        
+                        <OrientationInterpolator DEF="move_step8_1" key="0.6  0.65" keyvalue="0 0 0 0  -4.7956 0 3.2044 3.14"> </OrientationInterpolator>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_step8_1" toField="set_fraction"></Route>
+                        <Route fromNode="move_step8_1" fromField="value_changed" toNode="part_up_left_121" toField="rotation"></Route>
+                        <Route fromNode="move_step8_1" fromField="value_changed" toNode="part_up_left_231" toField="rotation"></Route>
+                        <OrientationInterpolator DEF="move_step8_2" key="0.6  0.65" keyvalue="0 0 0 0  -6.6763 0 1.3273 3.1"> </OrientationInterpolator>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_step8_2" toField="set_fraction"></Route>
+                        <Route fromNode="move_step8_2" fromField="value_changed" toNode="part_up_left_112" toField="rotation"></Route>
+                        <OrientationInterpolator DEF="move_step8_3" key="0.6  0.65" keyvalue="0 0 0 0  0.2021 0 -1.0158 3.14"> </OrientationInterpolator>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_step8_3" toField="set_fraction"></Route>
+                        <Route fromNode="move_step8_3" fromField="value_changed" toNode="part_up_left_211" toField="rotation"></Route>
+                        <OrientationInterpolator DEF="move_step8_4" key="0.6  0.65" keyvalue="0 0 0 0  0.3951 0 1.9865 3.1"> </OrientationInterpolator>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_step8_4" toField="set_fraction"></Route>
+                        <Route fromNode="move_step8_4" fromField="value_changed" toNode="part_up_left_221" toField="rotation"></Route>
+                        <OrientationInterpolator DEF="move_step8_5" key="0.6  0.65" keyvalue="0 0 0 0  -4.7956 0 -3.2044 3.14"> </OrientationInterpolator>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_step8_5" toField="set_fraction"></Route>
+                        <Route fromNode="move_step8_5" fromField="value_changed" toNode="part_up_right_121" toField="rotation"></Route>
+                        <Route fromNode="move_step8_5" fromField="value_changed" toNode="part_up_right_231" toField="rotation"></Route>
+                        <OrientationInterpolator DEF="move_step8_6" key="0.6  0.65" keyvalue="0 0 0 0  -6.6763 0 -1.3273 3.1"> </OrientationInterpolator>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_step8_6" toField="set_fraction"></Route>
+                        <Route fromNode="move_step8_6" fromField="value_changed" toNode="part_up_right_112" toField="rotation"></Route>
+                        <OrientationInterpolator DEF="move_step8_7" key="0.6  0.65" keyvalue="0 0 0 0  0.2021 0 1.0158 3.14"> </OrientationInterpolator>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_step8_7" toField="set_fraction"></Route>
+                        <Route fromNode="move_step8_7" fromField="value_changed" toNode="part_up_right_211" toField="rotation"></Route>
+                        <OrientationInterpolator DEF="move_step8_8" key="0.6  0.65" keyvalue="0 0 0 0  0.3951 0 -1.9865 3.1"> </OrientationInterpolator>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_step8_8" toField="set_fraction"></Route>
+                        <Route fromNode="move_step8_8" fromField="value_changed" toNode="part_up_right_221" toField="rotation"></Route>
+                        
+                        <OrientationInterpolator DEF="move_step9_1" key="0.65  0.7" keyvalue="0 0 0 0  4.7956 0 3.2044 3.14"> </OrientationInterpolator>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_step9_1" toField="set_fraction"></Route>
+                        <Route fromNode="move_step9_1" fromField="value_changed" toNode="part_down_left_121" toField="rotation"></Route>
+                        <Route fromNode="move_step9_1" fromField="value_changed" toNode="part_down_left_231" toField="rotation"></Route>
+                        <OrientationInterpolator DEF="move_step9_2" key="0.65  0.7" keyvalue="0 0 0 0  6.6763 0 1.3273 3.1"> </OrientationInterpolator>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_step9_2" toField="set_fraction"></Route>
+                        <Route fromNode="move_step9_2" fromField="value_changed" toNode="part_down_left_112" toField="rotation"></Route>
+                        <OrientationInterpolator DEF="move_step9_3" key="0.65  0.7" keyvalue="0 0 0 0  -0.2021 0 -1.0158 3.14"> </OrientationInterpolator>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_step9_3" toField="set_fraction"></Route>
+                        <Route fromNode="move_step9_3" fromField="value_changed" toNode="part_down_left_211" toField="rotation"></Route>
+                        <OrientationInterpolator DEF="move_step9_4" key="0.65  0.7" keyvalue="0 0 0 0  -0.3951 0 1.9865 3.1"> </OrientationInterpolator>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_step9_4" toField="set_fraction"></Route>
+                        <Route fromNode="move_step9_4" fromField="value_changed" toNode="part_down_left_221" toField="rotation"></Route>
+                        <OrientationInterpolator DEF="move_step9_5" key="0.65  0.7" keyvalue="0 0 0 0  4.7956 0 -3.2044 3.14"> </OrientationInterpolator>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_step9_5" toField="set_fraction"></Route>
+                        <Route fromNode="move_step9_5" fromField="value_changed" toNode="part_down_right_121" toField="rotation"></Route>
+                        <Route fromNode="move_step9_5" fromField="value_changed" toNode="part_down_right_231" toField="rotation"></Route>
+                        <OrientationInterpolator DEF="move_step9_6" key="0.65  0.7" keyvalue="0 0 0 0  6.6763 0 -1.3273 3.1"> </OrientationInterpolator>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_step9_6" toField="set_fraction"></Route>
+                        <Route fromNode="move_step9_6" fromField="value_changed" toNode="part_down_right_112" toField="rotation"></Route>
+                        <OrientationInterpolator DEF="move_step9_7" key="0.65  0.7" keyvalue="0 0 0 0  -0.2021 0 1.0158 3.14"> </OrientationInterpolator>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_step9_7" toField="set_fraction"></Route>
+                        <Route fromNode="move_step9_7" fromField="value_changed" toNode="part_down_right_211" toField="rotation"></Route>
+                        <OrientationInterpolator DEF="move_step9_8" key="0.65  0.7" keyvalue="0 0 0 0  -0.3951 0 -1.9865 3.1"> </OrientationInterpolator>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_step9_8" toField="set_fraction"></Route>
+                        <Route fromNode="move_step9_8" fromField="value_changed" toNode="part_down_right_221" toField="rotation"></Route>
+                        
+                        <OrientationInterpolator DEF="move_step10_1" key="0.7  0.71  0.72  0.73  0.74  0.8200  0.8250  0.8300  0.8350  0.8400  0.8450  0.8500  0.8550  0.8600  0.8650  0.8700" 
+                            keyvalue="0 0 0 0  -0.4306 0 -1.0396 3.14  0 0 0 0  0.4306 0 1.0396 3.14  0 0 0 0  0.4307 0 1.0396 0  0.4307 0 1.0396 0.7844  0.4307 0 1.0396 1.4074  0.4307 0 1.0396 1.8527  0.4307 0 1.0396 2.1715  0.4307 0 1.0396 2.4101  0.4307 0 1.0396 2.5987  0.4307 0 1.0396 2.7559  0.4307 0 1.0396 2.8937  0.4307 0 1.0396 3.0200  0.4307 0 1.0396 3.1410"> </OrientationInterpolator>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_step10_1" toField="set_fraction"></Route>
+                        <Route fromNode="move_step10_1" fromField="value_changed" toNode="part_down_right_1111" toField="rotation"></Route>
+                        <OrientationInterpolator DEF="move_step10_2" key="0.7  0.71  0.72  0.73  0.74  0.8200  0.8250  0.8300  0.8350  0.8400  0.8450  0.8500  0.8550  0.8600  0.8650  0.8700" 
+                            keyvalue="0 0 0 0   0 0 1 3.1  0 0 0 0  0 0 -1 3.1  0 0 0 0  0 0 -1 0  0 0 -1 0.7844  0 0 -1 1.4074  0 0 -1 1.8527  0 0 -1 2.1715  0 0 -1 2.4101  0 0 -1 2.5987  0 0 -1 2.7559  0 0 -1 2.8937  0 0 -1 3.0200  0 0 -1 3.1410"> </OrientationInterpolator>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_step10_2" toField="set_fraction"></Route>
+                        <Route fromNode="move_step10_2" fromField="value_changed" toNode="part_down_right_1121" toField="rotation"></Route>
+                        <OrientationInterpolator DEF="move_step10_3" key="0.7  0.71  0.72  0.73  0.74  0.8200  0.8250  0.8300  0.8350  0.8400  0.8450  0.8500  0.8550  0.8600  0.8650  0.8700" 
+                            keyvalue="0 0 0 0  -1 0 -1 3.14  0 0 0 0  1 0 1 3.14  0 0 0 0  1 0 1 0  1 0 1 0.7844  1 0 1 1.4074  1 0 1 1.8527  1 0 1 2.1715  1 0 1 2.4101  1 0 1 2.5987  1 0 1 2.7559  1 0 1 2.8937  1 0 1 3.0200  1 0 1 3.1410"> </OrientationInterpolator>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_step10_3" toField="set_fraction"></Route>
+                        <Route fromNode="move_step10_3" fromField="value_changed" toNode="part_down_right_1211" toField="rotation"></Route>
+                        <OrientationInterpolator DEF="move_step10_4" key="0.7  0.71  0.72  0.73  0.74  0.8200  0.8250  0.8300  0.8350  0.8400  0.8450  0.8500  0.8550  0.8600  0.8650  0.8700" 
+                            keyvalue="0 0 0 0  0.4307 0 1.0396 3.14  0 0 0 0  -0.4307 0 -1.0396 3.14  0 0 0 0  -0.4306 0 -1.0396 0  -0.4306 0 -1.0396 0.7844  -0.4306 0 -1.0396 1.4074  -0.4306 0 -1.0396 1.8527  -0.4306 0 -1.0396 2.1715  -0.4306 0 -1.0396 2.4101  -0.4306 0 -1.0396 2.5987  -0.4306 0 -1.0396 2.7559  -0.4306 0 -1.0396 2.8937  -0.4306 0 -1.0396 3.0200  -0.4306 0 -1.0396 3.1410"> </OrientationInterpolator>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_step10_4" toField="set_fraction"></Route>
+                        <Route fromNode="move_step10_4" fromField="value_changed" toNode="part_down_right_1221" toField="rotation"></Route>
+                        <OrientationInterpolator DEF="move_step10_5" key="0.7  0.71  0.72  0.73  0.74  0.8200  0.8250  0.8300  0.8350  0.8400  0.8450  0.8500  0.8550  0.8600  0.8650  0.8700" 
+                            keyvalue="0 0 0 0  -0.4306 0 1.0396 3.14  0 0 0 0  0.4306 0 -1.0396 3.14  0 0 0 0  -0.4306 0 1.0396 0  -0.4306 0 1.0396 0.7844  -0.4306 0 1.0396 1.4074  -0.4306 0 1.0396 1.8527  -0.4306 0 1.0396 2.1715  -0.4306 0 1.0396 2.4101  -0.4306 0 1.0396 2.5987  -0.4306 0 1.0396 2.7559  -0.4306 0 1.0396 2.8937  -0.4306 0 1.0396 3.0200  -0.4306 0 1.0396 3.1410"> </OrientationInterpolator>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_step10_5" toField="set_fraction"></Route>
+                        <Route fromNode="move_step10_5" fromField="value_changed" toNode="part_up_right_1111" toField="rotation"></Route>
+                        <OrientationInterpolator DEF="move_step10_6" key="0.7  0.71  0.72  0.73  0.74  0.8200  0.8250  0.8300  0.8350  0.8400  0.8450  0.8500  0.8550  0.8600  0.8650  0.8700" 
+                            keyvalue="0 0 0 0   0 0 -1 3.1  0 0 0 0  0 0 1 3.1  0 0 0 0  0 0 -1 0  0 0 -1 0.7844  0 0 -1 1.4074  0 0 -1 1.8527  0 0 -1 2.1715  0 0 -1 2.4101  0 0 -1 2.5987  0 0 -1 2.7559  0 0 -1 2.8937  0 0 -1 3.0200  0 0 -1 3.1410"> </OrientationInterpolator>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_step10_6" toField="set_fraction"></Route>
+                        <Route fromNode="move_step10_6" fromField="value_changed" toNode="part_up_right_1121" toField="rotation"></Route>
+                        <OrientationInterpolator DEF="move_step10_7" key="0.7  0.71  0.72  0.73  0.74  0.8200  0.8250  0.8300  0.8350  0.8400  0.8450  0.8500  0.8550  0.8600  0.8650  0.8700" 
+                            keyvalue="0 0 0 0  -1 0 1 3.14  0 0 0 0  1 0 -1 3.14  0 0 0 0  -1 0 1 0  -1 0 1 0.7844  -1 0 1 1.4074  -1 0 1 1.8527  -1 0 1 2.1715  -1 0 1 2.4101  -1 0 1 2.5987  -1 0 1 2.7559  -1 0 1 2.8937  -1 0 1 3.0200  -1 0 1 3.1410"> </OrientationInterpolator>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_step10_7" toField="set_fraction"></Route>
+                        <Route fromNode="move_step10_7" fromField="value_changed" toNode="part_up_right_1211" toField="rotation"></Route>
+                        <OrientationInterpolator DEF="move_step10_8" key="0.7  0.71  0.72  0.73  0.74  0.8200  0.8250  0.8300  0.8350  0.8400  0.8450  0.8500  0.8550  0.8600  0.8650  0.8700" 
+                            keyvalue="0 0 0 0  0.4307 0 -1.0396 3.14  0 0 0 0  -0.4307 0 1.0396 3.14  0 0 0 0  0.4307 0 -1.0396 0  0.4307 0 -1.0396 0.7844  0.4307 0 -1.0396 1.4074  0.4307 0 -1.0396 1.8527  0.4307 0 -1.0396 2.1715  0.4307 0 -1.0396 2.4101  0.4307 0 -1.0396 2.5987  0.4307 0 -1.0396 2.7559  0.4307 0 -1.0396 2.8937  0.4307 0 -1.0396 3.0200  0.4307 0 -1.0396 3.1410"> </OrientationInterpolator>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_step10_8" toField="set_fraction"></Route>
+                        <Route fromNode="move_step10_8" fromField="value_changed" toNode="part_up_right_1221" toField="rotation"></Route>
+                     
+                        <OrientationInterpolator DEF="move_step10_9" key="0.75  0.76  0.77  0.78  0.79  0.8700  0.8750  0.8800  0.8850  0.8900  0.8950  0.9000  0.9050  0.9100  0.9150  0.9200" 
+                            keyvalue="0 0 0 0  -0.4306 0 1.0396 3.14  0 0 0 0  0.4306 0 -1.0396 3.14  0 0 0 0  0.4306 0 -1.0396 0  0.4306 0 -1.0396 0.7844  0.4306 0 -1.0396 1.4074  0.4306 0 -1.0396 1.8527  0.4306 0 -1.0396 2.1715  0.4306 0 -1.0396 2.4101  0.4306 0 -1.0396 2.5987  0.4306 0 -1.0396 2.7559  0.4306 0 -1.0396 2.8937  0.4306 0 -1.0396 3.0200  0.4306 0 -1.0396 3.1410"> </OrientationInterpolator>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_step10_9" toField="set_fraction"></Route>
+                        <Route fromNode="move_step10_9" fromField="value_changed" toNode="part_down_left_1111" toField="rotation"></Route>
+                        <OrientationInterpolator DEF="move_step10_10" key="0.75  0.76  0.77  0.78  0.79  0.8700  0.8750  0.8800  0.8850  0.8900  0.8950  0.9000  0.9050  0.9100  0.9150  0.9200" 
+                            keyvalue="0 0 0 0   0 0 -1 3.1  0 0 0 0  0 0 1 3.1  0 0 0 0  0 0 1 0  0 0 1 0.7844  0 0 1 1.4074  0 0 1 1.8527  0 0 1 2.1715  0 0 1 2.4101  0 0 1 2.5987  0 0 1 2.7559  0 0 1 2.8937  0 0 1 3.0200  0 0 1 3.1410"> </OrientationInterpolator>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_step10_10" toField="set_fraction"></Route>
+                        <Route fromNode="move_step10_10" fromField="value_changed" toNode="part_down_left_1121" toField="rotation"></Route>
+                        <OrientationInterpolator DEF="move_step10_11" key="0.75  0.76  0.77  0.78  0.79  0.8700  0.8750  0.8800  0.8850  0.8900  0.8950  0.9000  0.9050  0.9100  0.9150  0.9200" 
+                            keyvalue="0 0 0 0  -1 0 1 3.14  0 0 0 0  1 0 -1 3.14  0 0 0 0  1 0 -1 0  1 0 -1 0.7844  1 0 -1 1.4074  1 0 -1 1.8527  1 0 -1 2.1715  1 0 -1 2.4101  1 0 -1 2.5987  1 0 -1 2.7559  1 0 -1 2.8937  1 0 -1 3.0200  1 0 -1 3.1410"> </OrientationInterpolator>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_step10_11" toField="set_fraction"></Route>
+                        <Route fromNode="move_step10_11" fromField="value_changed" toNode="part_down_left_1211" toField="rotation"></Route>
+                        <OrientationInterpolator DEF="move_step10_12" key="0.75  0.76  0.77  0.78  0.79  0.8700  0.8750  0.8800  0.8850  0.8900  0.8950  0.9000  0.9050  0.9100  0.9150  0.9200" 
+                            keyvalue="0 0 0 0  0.4307 0 -1.0396 3.14  0 0 0 0  -0.4307 0 1.0396 3.14  0 0 0 0  -0.4307 0 1.0396 0  -0.4307 0 1.0396 0.7844  -0.4307 0 1.0396 1.4074  -0.4307 0 1.0396 1.8527  -0.4307 0 1.0396 2.1715  -0.4307 0 1.0396 2.4101  -0.4307 0 1.0396 2.5987  -0.4307 0 1.0396 2.7559  -0.4307 0 1.0396 2.8937  -0.4307 0 1.0396 3.0200  -0.4307 0 1.0396 3.1410"> </OrientationInterpolator>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_step10_12" toField="set_fraction"></Route>
+                        <Route fromNode="move_step10_12" fromField="value_changed" toNode="part_down_left_1221" toField="rotation"></Route>
+                        <OrientationInterpolator DEF="move_step10_13" key="0.75  0.76  0.77  0.78  0.79  0.8700  0.8750  0.8800  0.8850  0.8900  0.8950  0.9000  0.9050  0.9100  0.9150  0.9200" 
+                            keyvalue="0 0 0 0  -0.4306 0 -1.0396 3.14  0 0 0 0  0.4306 0 1.0396 3.14  0 0 0 0  -0.4306 0 -1.0396 0  -0.4306 0 -1.0396 0.7844  -0.4306 0 -1.0396 1.4074  -0.4306 0 -1.0396 1.8527  -0.4306 0 -1.0396 2.1715  -0.4306 0 -1.0396 2.4101  -0.4306 0 -1.0396 2.5987  -0.4306 0 -1.0396 2.7559  -0.4306 0 -1.0396 2.8937  -0.4306 0 -1.0396 3.0200  -0.4306 0 -1.0396 3.1410"> </OrientationInterpolator>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_step10_13" toField="set_fraction"></Route>
+                        <Route fromNode="move_step10_13" fromField="value_changed" toNode="part_up_left_1111" toField="rotation"></Route>
+                        <OrientationInterpolator DEF="move_step10_14" key="0.75  0.76  0.77  0.78  0.79  0.8700  0.8750  0.8800  0.8850  0.8900  0.8950  0.9000  0.9050  0.9100  0.9150  0.9200" 
+                            keyvalue="0 0 0 0   0 0 1 3.1  0 0 0 0  0 0 -1 3.1  0 0 0 0  0 0 1 0  0 0 1 0.7844  0 0 1 1.4074  0 0 1 1.8527  0 0 1 2.1715  0 0 1 2.4101  0 0 1 2.5987  0 0 1 2.7559  0 0 1 2.8937  0 0 1 3.0200  0 0 1 3.1410"> </OrientationInterpolator>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_step10_14" toField="set_fraction"></Route>
+                        <Route fromNode="move_step10_14" fromField="value_changed" toNode="part_up_left_1121" toField="rotation"></Route>
+                        <OrientationInterpolator DEF="move_step10_15" key="0.75  0.76  0.77  0.78  0.79  0.8700  0.8750  0.8800  0.8850  0.8900  0.8950  0.9000  0.9050  0.9100  0.9150  0.9200" 
+                            keyvalue="0 0 0 0  -1 0 -1 3.14  0 0 0 0  1 0 1 3.14  0 0 0 0  -1 0 -1 0  -1 0 -1 0.7844  -1 0 -1 1.4074  -1 0 -1 1.8527  -1 0 -1 2.1715  -1 0 -1 2.4101  -1 0 -1 2.5987  -1 0 -1 2.7559  -1 0 -1 2.8937  -1 0 -1 3.0200  -1 0 -1 3.1410"> </OrientationInterpolator>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_step10_15" toField="set_fraction"></Route>
+                        <Route fromNode="move_step10_15" fromField="value_changed" toNode="part_up_left_1211" toField="rotation"></Route>
+                        <OrientationInterpolator DEF="move_step10_16" key="0.75  0.76  0.77  0.78  0.79  0.8700  0.8750  0.8800  0.8850  0.8900  0.8950  0.9000  0.9050  0.9100  0.9150  0.9200" 
+                            keyvalue="0 0 0 0  0.4307 0 1.0396 3.14  0 0 0 0  -0.4307 0 -1.0396 3.14  0 0 0 0  0.4307 0 1.0396 0  0.4307 0 1.0396 0.7844  0.4307 0 1.0396 1.4074  0.4307 0 1.0396 1.8527  0.4307 0 1.0396 2.1715  0.4307 0 1.0396 2.4101  0.4307 0 1.0396 2.5987  0.4307 0 1.0396 2.7559  0.4307 0 1.0396 2.8937  0.4307 0 1.0396 3.0200  0.4307 0 1.0396 3.1410"> </OrientationInterpolator>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_step10_16" toField="set_fraction"></Route>
+                        <Route fromNode="move_step10_16" fromField="value_changed" toNode="part_up_left_1221" toField="rotation"></Route>
+                        <!-- The part of mostions of portions in step 11 are inter into the step 10 above, namely, the motions specified in step 10, which take place from 0.82 to 0.87. -->         
+                        <OrientationInterpolator DEF="move_step11_1" key="0.8 0.82 0.87" keyvalue="0 0 0 0  0 0 1 1.57 0 0 0 0"> </OrientationInterpolator>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_step11_1" toField="set_fraction"></Route>
+                        <Route fromNode="move_step11_1" fromField="value_changed" toNode="part_down_right2" toField="rotation"></Route>
+                        <Route fromNode="move_step11_1" fromField="value_changed" toNode="part_up_right2" toField="rotation"></Route>            
+                        <OrientationInterpolator DEF="move_step11_2" key="0.85 0.87 0.92" keyvalue="0 0 0 0  0 0 -1 1.57 0 0 0 0"> </OrientationInterpolator>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_step11_2" toField="set_fraction"></Route>
+                        <Route fromNode="move_step11_2" fromField="value_changed" toNode="part_up_left2" toField="rotation"></Route> 
+                        <Route fromNode="move_step11_2" fromField="value_changed" toNode="part_down_left2" toField="rotation"></Route>
+                        <!-- The wings of the paper crane are formed -->
+                        <OrientationInterpolator DEF="move_step12_1" key="0.92 0.95" keyvalue="0 0 0 0  -1 0 0 1.8"> </OrientationInterpolator>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_step12_1" toField="set_fraction"></Route>
+                        <Route fromNode="move_step12_1" fromField="value_changed" toNode="part_up_left_223" toField="rotation"></Route>
+                        <Route fromNode="move_step12_1" fromField="value_changed" toNode="part_up_right_223" toField="rotation"></Route>
+                        <OrientationInterpolator DEF="move_step12_2" key="0.92 0.95" keyvalue="0 0 0 0  1 0 0 1.8"> </OrientationInterpolator>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_step12_2" toField="set_fraction"></Route>
+                        <Route fromNode="move_step12_2" fromField="value_changed" toNode="part_down_left_223" toField="rotation"></Route>
+                        <Route fromNode="move_step12_2" fromField="value_changed" toNode="part_down_right_223" toField="rotation"></Route>
+                        <OrientationInterpolator DEF="move_step12_3" key="0.92 0.95" keyvalue="0 0 0 0  1 0 1 1.82"> </OrientationInterpolator>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_step12_3" toField="set_fraction"></Route>
+                        <Route fromNode="move_step12_3" fromField="value_changed" toNode="part_up_left_233" toField="rotation"></Route>
+                        <OrientationInterpolator DEF="move_step12_4" key="0.92 0.95" keyvalue="0 0 0 0  1 0 -1 1.82"> </OrientationInterpolator>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_step12_4" toField="set_fraction"></Route>
+                        <Route fromNode="move_step12_4" fromField="value_changed" toNode="part_up_right_233" toField="rotation"></Route>
+                        <OrientationInterpolator DEF="move_step12_5" key="0.92 0.95" keyvalue="0 0 0 0  -1 0 1 1.82"> </OrientationInterpolator>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_step12_5" toField="set_fraction"></Route>
+                        <Route fromNode="move_step12_5" fromField="value_changed" toNode="part_down_left_233" toField="rotation"></Route>
+                        <OrientationInterpolator DEF="move_step12_6" key="0.92 0.95" keyvalue="0 0 0 0  -1 0 -1 1.82"> </OrientationInterpolator>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_step12_6" toField="set_fraction"></Route>
+                        <Route fromNode="move_step12_6" fromField="value_changed" toNode="part_down_right_233" toField="rotation"></Route>
+                        <!-- The beak of the paper crane is formed -->
+                        <OrientationInterpolator DEF="move_step12_7" key="0.8200  0.8250  0.8300  0.8350  0.8400  0.8450  0.8500  0.8550  0.8600  0.8650  0.8700" keyvalue="1 0 -1 0  1 0 -1 0.7844  1 0 -1 1.4074  1 0 -1 1.8527  1 0 -1 2.1715  1 0 -1 2.4101  1 0 -1 2.5987  1 0 -1 2.7559  1 0 -1 2.8937  1 0 -1 3.0200  1 0 -1 3.14"> </OrientationInterpolator>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_step12_7" toField="set_fraction"></Route>
+                        <Route fromNode="move_step12_7" fromField="value_changed" toNode="part_up_right_1111_beak" toField="rotation"></Route>
+                        <OrientationInterpolator DEF="move_step12_8" key="0.8200  0.8250  0.8300  0.8350  0.8400  0.8450  0.8500  0.8550  0.8600  0.8650  0.8700" keyvalue="0.1796 0 0.4336 0  0.1796 0 0.4336 0.7844  0.1796 0 0.4336 1.4074  0.1796 0 0.4336 1.8527  0.1796 0 0.4336 2.1715  0.1796 0 0.4336 2.4101  0.1796 0 0.4336 2.5987  0.1796 0 0.4336 2.7559  0.1796 0 0.4336 2.8937  0.1796 0 0.4336 3.0200  0.1796 0 0.4336 3.14"> </OrientationInterpolator>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_step12_8" toField="set_fraction"></Route>
+                        <Route fromNode="move_step12_8" fromField="value_changed" toNode="part_up_right_1121_beak" toField="rotation"></Route>
+                        <OrientationInterpolator DEF="move_step12_9" key="0.8200  0.8250  0.8300  0.8350  0.8400  0.8450  0.8500  0.8550  0.8600  0.8650  0.8700" keyvalue="0.4336 0 -0.1796 0  0.4336 0 -0.1796 0.7844  0.4336 0 -0.1796 1.4074  0.4336 0 -0.1796 1.8527  0.4336 0 -0.1796 2.1715  0.4336 0 -0.1796 2.4101  0.4336 0 -0.1796 2.5987  0.4336 0 -0.1796 2.7559  0.4336 0 -0.1796 2.8937  0.4336 0 -0.1796 3.0200  0.4336 0 -0.1796 3.14"> </OrientationInterpolator>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_step12_9" toField="set_fraction"></Route>
+                        <Route fromNode="move_step12_9" fromField="value_changed" toNode="part_up_right_1211_beak" toField="rotation"></Route>
+                        <OrientationInterpolator DEF="move_step12_10" key="0.8200  0.8250  0.8300  0.8350  0.8400  0.8450  0.8500  0.8550  0.8600  0.8650  0.8700" keyvalue="0 0 1 0  0 0 1 0.7844  0 0 1 1.4074  0 0 1 1.8527  0 0 1 2.1715  0 0 1 2.4101  0 0 1 2.5987  0 0 1 2.7559  0 0 1 2.8937  0 0 1 3.0200  0 0 1 3.14"> </OrientationInterpolator>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_step12_10" toField="set_fraction"></Route>
+                        <Route fromNode="move_step12_10" fromField="value_changed" toNode="part_up_right_1221_beak" toField="rotation"></Route>
+                        <OrientationInterpolator DEF="move_step12_11" key="0.8200  0.8250  0.8300  0.8350  0.8400  0.8450  0.8500  0.8550  0.8600  0.8650  0.8700" keyvalue="-1 0 -1 0  -1 0 -1 0.7844  -1 0 -1 1.4074  -1 0 -1 1.8527  -1 0 -1 2.1715  -1 0 -1 2.4101  -1 0 -1 2.5987  -1 0 -1 2.7559  -1 0 -1 2.8937  -1 0 -1 3.0200  -1 0 -1 3.14"> </OrientationInterpolator>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_step12_11" toField="set_fraction"></Route>
+                        <Route fromNode="move_step12_11" fromField="value_changed" toNode="part_down_right_1111_beak" toField="rotation"></Route>
+                        <OrientationInterpolator DEF="move_step12_12" key="0.8200  0.8250  0.8300  0.8350  0.8400  0.8450  0.8500  0.8550  0.8600  0.8650  0.8700" keyvalue="-0.1796 0 0.4336 0  -0.1796 0 0.4336 0.7844  -0.1796 0 0.4336 1.4074  -0.1796 0 0.4336 1.8527  -0.1796 0 0.4336 2.1715  -0.1796 0 0.4336 2.4101  -0.1796 0 0.4336 2.5987  -0.1796 0 0.4336 2.7559  -0.1796 0 0.4336 2.8937  -0.1796 0 0.4336 3.0200  -0.1796 0 0.4336 3.14"> </OrientationInterpolator>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_step12_12" toField="set_fraction"></Route>
+                        <Route fromNode="move_step12_12" fromField="value_changed" toNode="part_down_right_1121_beak" toField="rotation"></Route>
+                        <OrientationInterpolator DEF="move_step12_13" key="0.8200  0.8250  0.8300  0.8350  0.8400  0.8450  0.8500  0.8550  0.8600  0.8650  0.8700" keyvalue="-0.4336 0 -0.1796 0  -0.4336 0 -0.1796 0.7844  -0.4336 0 -0.1796 1.4074  -0.4336 0 -0.1796 1.8527  -0.4336 0 -0.1796 2.1715  -0.4336 0 -0.1796 2.4101  -0.4336 0 -0.1796 2.5987  -0.4336 0 -0.1796 2.7559  -0.4336 0 -0.1796 2.8937  -0.4336 0 -0.1796 3.0200  -0.4336 0 -0.1796 3.14"> </OrientationInterpolator>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_step12_13" toField="set_fraction"></Route>
+                        <Route fromNode="move_step12_13" fromField="value_changed" toNode="part_down_right_1211_beak" toField="rotation"></Route>
+                        <OrientationInterpolator DEF="move_step12_14" key="0.8200  0.8250  0.8300  0.8350  0.8400  0.8450  0.8500  0.8550  0.8600  0.8650  0.8700" keyvalue="0 0 1 0  0 0 1 0.7844  0 0 1 1.4074  0 0 1 1.8527  0 0 1 2.1715  0 0 1 2.4101  0 0 1 2.5987  0 0 1 2.7559  0 0 1 2.8937  0 0 1 3.0200  0 0 1 3.14"> </OrientationInterpolator>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move_step12_14" toField="set_fraction"></Route>
+                        <Route fromNode="move_step12_14" fromField="value_changed" toNode="part_down_right_1221_beak" toField="rotation"></Route>  
+                    </Scene>
+                </x3d>
+                <!-- define the buttons, with which the readers can select the viewpoints suggested -->
+                <div class="buttons group">
+                    <input type="button" value="U_R_F"
+                        onclick="document.getElementById('upper_right_front').setAttribute('set_bind','true');" />
+                    <input type="button" value="upper_front"
+                        onclick="document.getElementById('upper_front').setAttribute('set_bind','true');" />
+                    <input type="button" value="lower_front"
+                        onclick="document.getElementById('lower_front').setAttribute('set_bind','true');" />
+                    <input type="button" value="upper_right"
+                        onclick="document.getElementById('upper_right').setAttribute('set_bind','true');" />
+                    <input type="button" value="top"
+                        onclick="document.getElementById('top').setAttribute('set_bind','true');" />
+                </div>
+            </div>
+        </div>
+        <div id="footer"> Copyright(C)Bachelor Thesis-Project from Jindong Gu in Uni Wuppertal
+        </div>
+    </body>
+</html>

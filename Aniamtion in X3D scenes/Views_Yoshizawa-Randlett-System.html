@@ -1,0 +1,262 @@
+<html>
+    <head>
+        <title>Origami-3D Animation</title>
+        <script type="text/javascript" src="http://www.x3dom.org/download/1.7/x3dom-full.js"></script>
+        <link rel="stylesheet" type="text/css" href="http://www.x3dom.org/download/1.7/x3dom.css" />
+        <link rel="stylesheet" href="origami.css" />
+        <base target="_self" />
+    </head>
+    <body>
+        <div id="nav">
+            <ul>
+                <li><a href="#header">Home</a></li>
+                <li><a href="Paper_Representations_Yoshizawa-Randlett-System.html">Paper Representations</a></li>
+                <li><a href="Operations_Yoshizawa-Randlett-System.html">Operations</a></li>
+                <li>Views <ul>
+                    <li><a href="#rotate">Rotate</a></li>
+                    <li><a href="#turn_over">Turn over and invisible line</a></li>
+                    <li><a href="#zoom_in">Zoom in</a></li>
+                    <li><a href="#zoom_out">Zoom out</a></li>
+                    <li><a href="#change_view">View From Here</a></li>
+                </ul>
+                </li>
+                <li><a href="Compond_Folds_Yoshizawa-Randlett-System.html">Compound folds</a></li>
+                <li><a href="Compond_Folds_Yoshizawa-Randlett-System.html#Paper_Crane">Complete Example(Paper Crane)</a></li>
+            </ul>
+        </div>
+        <div id="header">
+            <h1>Origami 3D Animation</h1>
+        </div>
+        <div id="use_directions">
+            <h1>Welcome in Origami with 3D Animation</h1>
+            <p>Use directions:</p>
+            <ul>
+                <li>You can select any 3D Animation from the navigator in the right side.</li>
+                <li>You can navigate in 3D scene with mouse freely,by which you can observe the
+                    model from any direction.</li>
+                <li>You can change the field of view in 3D scene by rotating mousewheel forwards or
+                    backwords.</li>
+                <li>At some 3D scenes you can click the buttons below, which stand for appropriate
+                    observation positions the author suggests.</li>
+            </ul>
+            <p>Copy right:</p>
+            <ul>
+                <li>All the two-dimensional pictures(diagrams in Yoshizawa-Randlett-System) come from https://commons.wikimedia.org/wiki/Main_Page.</li>
+                <li>All the X3D scenes and the design of website belong to the author.</li>
+            </ul>
+        </div>
+        <div id="section">
+            <div id="rotate">
+                <br />
+                <h1>Rotate-2D Diagram</h1>
+                <img src="images/Orisymbol_rotate.png"/>
+                <h1>Rotate-3D Animation</h1>
+                <x3d>
+                    <Scene>
+                        <!-- predefine the viewpoint of the observation -->
+                        <Viewpoint id="default" description="default_cam" position="1 5 5" orientation="-1 0 0  0.78"></Viewpoint>
+                        <!-- define the components and label them with DEFs  -->
+                        <Transform DEF="part2">
+                            <Transform DEF="part1">
+                                <Shape>
+                                    <!-- specify the appearance of the component -->
+                                    <Appearance DEF="AP">
+                                        <TwoSidedMaterial separateBackColor="true" diffuseColor="0.9 0.9 0.6"
+                                            backDiffuseColor="0.1 0.1 0.9"/>
+                                    </Appearance>
+                                    <!-- describe the component with point coordinates  -->
+                                    <IndexedFaceSet solid="false" coordIndex="0 1 2 3 4 -1">
+                                        <Coordinate point="-2 0 0  2 0 0  2 0 -1  -1 0 -4  -2 0 -4"/>
+                                    </IndexedFaceSet>
+                                </Shape>
+                            </Transform>
+                            <Shape>
+                                <Appearance USE="AP"></Appearance>
+                                <IndexedFaceSet solid="false" coordIndex="0 1 2 -1">
+                                    <Coordinate point="2 0.01 -1  -1 0.01 -1  -1 0.01 -4"/>
+                                </IndexedFaceSet>
+                            </Shape>
+                        </Transform>
+                        <!-- define a time trigger -->
+                        <TimeSensor DEF="time" cycleInterval="5" loop="true"/>
+                        <!-- define the key positions during the movement. Intermediate positions will be computed by interpolation -->
+                        <OrientationInterpolator DEF="move" key="0.2  0.7" keyvalue="0 0 0 0  0 -1 0 1.57"></OrientationInterpolator>
+                        <!-- define the routes, along which events are propagated according to the event model-->
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move" toField="set_fraction"></Route>
+                        <Route fromNode="move" fromField="value_changed" toNode="part2" toField="rotation"></Route>
+                    </Scene>
+                </x3d>                
+            </div>
+            <div id="turn_over">
+              <br />
+              <h1>Turn over and invisible line-2D Diagram</h1>
+              <img src="images/Origami_symbol_turn_over.png"/>
+              <h1>Turn over and invisible line-3D Animation</h1>
+                <x3d>
+                    <Scene>
+                        <!-- predefine the viewpoint of the observation -->
+                        <Viewpoint id="default" description="default_cam" position="0 6 5" orientation="-1 0 0  0.78"></Viewpoint>
+                        <!-- define the components and label them with DEFs  -->
+                        <Transform DEF="part">
+                            <Shape>
+                                <!-- specify the appearance of the component -->
+                                <Appearance DEF="AP">
+                                    <TwoSidedMaterial separateBackColor="true" diffuseColor="0.9 0.9 0.6"
+                                        backDiffuseColor="0.1 0.1 0.9"/>
+                                </Appearance>
+                                <IndexedFaceSet solid="false" coordIndex="0 1 2 3 4 -1">
+                                    <Coordinate point="-2 0 0  2 0 0  2 0 -1  -1 0 -4  -2 0 -4"/>
+                                </IndexedFaceSet>
+                            </Shape>
+                            <Shape>
+                                <IndexedLineSet coordIndex="0 1 -1 1 2 -1">
+                                    <Coordinate point="2 -0.01 -1  -1 -0.01 -1  -1 -0.01 -4"/>
+                                </IndexedLineSet>
+                                <Appearance>
+                                    <Material emissiveColor="0.2 0.2 0.2"/>
+                                    <LineProperties linetype="2" containerField="lineProperties"></LineProperties>
+                                </Appearance>
+                            </Shape>
+                            <Shape>
+                                <Appearance USE="AP"></Appearance>
+                                <IndexedFaceSet solid="false" coordIndex="0 1 2 -1">
+                                    <Coordinate point="2 0.01 -1  -1 0.01 -1  -1 0.01 -4"/>
+                                </IndexedFaceSet>
+                            </Shape>
+                        </Transform>
+                        <!-- define a time trigger -->
+                        <TimeSensor DEF="time" cycleInterval="5" loop="true"/>
+                        <!-- define the key positions during the movement. Intermediate positions will be computed by interpolation -->
+                        <OrientationInterpolator DEF="move" key="0.2  0.7" keyvalue="0 0 0 0  0 0 -1 3.14"></OrientationInterpolator>
+                        <!-- define the routes, along which events are propagated according to the event model-->
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move" toField="set_fraction"></Route>
+                        <Route fromNode="move" fromField="value_changed" toNode="part" toField="rotation"></Route>
+                    </Scene>
+                </x3d>
+            </div>
+            <div id="zoom_in">
+                <br />
+                <h1>Zoom in-2D Diagram</h1>
+                <img src="images/Origami_symbol_zoom_in.png"/>
+                <h1>Zoom in-3D Animation</h1>
+                <x3d>
+                    <Scene>
+                        <!-- predefine the viewpoint of the observation -->
+                        <Viewpoint id="default" description="default_cam" position="0 6 6" orientation="-1 0 0  0.78"></Viewpoint>
+                        <!-- define the components and label them with DEFs  -->
+                        <Transform DEF="part">
+                            <Shape>
+                                <!-- specify the appearance of the component -->
+                                <Appearance DEF="AP">
+                                    <TwoSidedMaterial separateBackColor="true" diffuseColor="0.9 0.9 0.6" backDiffuseColor="0.1 0.1 0.9"/>
+                                </Appearance>
+                                <IndexedFaceSet solid="false" coordIndex="0 1 2 3 4 5 6 -1">
+                                    <Coordinate point="-2 0 2  2 0 2  2 0 -1.5  1.8 0 -1.5  1.5 0 -1.8  1.5 0 -2  -2 0 -2"/>
+                                </IndexedFaceSet>
+                            </Shape>
+                            <Shape>
+                                <Appearance>
+                                    <Material diffuseColor="0.1 0.1 0.9"/>
+                                </Appearance>
+                                <IndexedFaceSet solid="false" coordIndex="0 1 2 3 -1">
+                                    <Coordinate point="2 0 -1.5  1.8 0 -1.5  1.5 0 -1.8  1.5 0 -2"/>
+                                </IndexedFaceSet>
+                            </Shape>
+                            <Shape>
+                                <Appearance USE="AP"></Appearance>
+                                <IndexedFaceSet solid="false" coordIndex="0 1 2 -1">
+                                    <Coordinate point="1.8 0 -1.5  1.8 0.001 -1.8  1.5 0 -1.8"/>
+                                </IndexedFaceSet>
+                            </Shape>
+                        </Transform>
+                        <!-- define a time trigger -->
+                        <TimeSensor DEF="time" cycleInterval="5" loop="true"/>
+                        <!-- define the key positions during the movement. Intermediate positions will be computed by interpolation -->
+                        <PositionInterpolator DEF="move" key="0.2  0.7" keyvalue="0 0 0  -1.8 5.5 7.0"></PositionInterpolator>
+                        <!-- define the routes, along which events are propagated according to the event model-->
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move" toField="set_fraction"></Route>
+                        <Route fromNode="move" fromField="value_changed" toNode="part" toField="translation"></Route>
+                    </Scene>
+                </x3d>
+            </div>
+            <div id="zoom_out">
+                <br />
+                <h1>Zoom Out-2D Diagram</h1>
+                <img src="images/Origami_symbol_zoom_out.png"/>
+                <h1>Zoom Out-3D Animation</h1>
+                <x3d>
+                    <Scene>
+                        <!-- predefine the viewpoint of the observation -->
+                        <Viewpoint DEF="default" description="default_cam" position="0 6 6" orientation="-1 0 0  0.78"></Viewpoint>
+                        <!-- define the components and label them with DEFs  -->
+                        <Transform DEF="part">
+                            <Shape>
+                                <!-- specify the appearance of the component -->
+                                <Appearance DEF="AP">
+                                    <TwoSidedMaterial separateBackColor="true" diffuseColor="0.9 0.9 0.6" backDiffuseColor="0.1 0.1 0.9"/>
+                                </Appearance>
+                                <IndexedFaceSet solid="false" coordIndex="0 1 2 3 4 5 6 -1">
+                                    <Coordinate point="-2 0 2  2 0 2  2 0 -1.5  1.8 0 -1.5  1.5 0 -1.8  1.5 0 -2  -2 0 -2"/>
+                                </IndexedFaceSet>
+                            </Shape>
+                            <Shape>
+                                <Appearance>
+                                    <Material diffuseColor="0.1 0.1 0.9"/>
+                                </Appearance>
+                                <IndexedFaceSet solid="false" coordIndex="0 1 2 3 -1">
+                                    <Coordinate point="2 0 -1.5  1.8 0 -1.5  1.5 0 -1.8  1.5 0 -2"/>
+                                </IndexedFaceSet>
+                            </Shape>
+                            <Shape>
+                                <Appearance USE="AP"></Appearance>
+                                <IndexedFaceSet solid="false" coordIndex="0 1 2 -1">
+                                    <Coordinate point="1.8 0 -1.5  1.8 0.001 -1.8  1.5 0 -1.8"/>
+                                </IndexedFaceSet>
+                            </Shape>
+                        </Transform>
+                        <!-- define a time trigger -->
+                        <TimeSensor DEF="time" cycleInterval="5" loop="true"/>
+                        <!-- define the key positions during the movement. Intermediate positions will be computed by interpolation -->
+                        <PositionInterpolator DEF="move" key="0 0.2  0.7"
+                            keyvalue="-1.8 5.5 7.0  -1.8 5.5 7.0  0 0 0"></PositionInterpolator>
+                        <Route fromNode="time" fromField="fraction_changed" toNode="move" toField="set_fraction"></Route>
+                        <Route fromNode="move" fromField="value_changed" toNode="part" toField="translation"></Route>
+                    </Scene>
+                </x3d>
+            </div>
+            <div id="change_view">
+                <br />
+                <h1>Change View-2D Diagram</h1>
+                <img src="images/Origami_symbol_eye.png"/>
+                <h1>Change View-3D Animation</h1>
+                <x3d>
+                    <Scene>
+                        <!-- predefine the viewpoint of the observation -->
+                        <Viewpoint DEF="Viewpoint_before" description="default_cam" position="0 1 10" orientation="0 0 0  0.78"></Viewpoint>
+                        <!-- define the components and label them with DEFs  -->
+                        <Transform DEF="part">
+                            <Shape>
+                                <!-- specify the appearance of the component -->
+                                <Appearance DEF="AP">
+                                    <TwoSidedMaterial separateBackColor="true" diffuseColor="0.1 0.1 0.9" backDiffuseColor="0.9 0.9 0.6"/>
+                                </Appearance>
+                                <IndexedFaceSet solid="false" coordIndex="0 1 2 3 -1 1 4 2 -1 1 5 4 -1 0 6 5 1 -1">
+                                    <Coordinate point="2.2 0 0  0 1.8 0  -2.488 2.2 0.25  -1.8 0 0.5  -2.82 1.8 0  -2.488 2.2 -0.25  -1.8 0 -0.5"/>
+                                </IndexedFaceSet>
+                            </Shape>
+                        </Transform>
+                        <!-- define a time trigger -->
+                        <TimeSensor DEF="time" cycleInterval="5" loop="true"/>
+                        <!-- define the key positions during the movement. Intermediate positions will be computed by interpolation -->
+                        <OrientationInterpolator DEF="rotate" key="0.2  0.7" keyvalue="0 0 0 0  0 1 0 1.58"></OrientationInterpolator>
+                        <!-- define the routes, along which events are propagated according to the event model-->
+                        <Route fromNode="time" fromField="fraction_changed" toNode="rotate" toField="set_fraction"></Route>
+                        <Route fromNode="rotate" fromField="value_changed" toNode="part" toField="rotation"></Route>
+                    </Scene>
+                </x3d>
+            </div>   
+        </div>
+        <div id="footer"> Copyright(C)Bachelor Thesis-Project from Jindong Gu in Uni Wuppertal
+        </div>
+    </body>
+</html>

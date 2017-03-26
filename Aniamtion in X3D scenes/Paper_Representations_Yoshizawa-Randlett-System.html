@@ -1,0 +1,160 @@
+<html>
+    <head>
+        <title>Origami-3D Animation</title>
+        <script type="text/javascript" src="http://www.x3dom.org/download/1.7/x3dom-full.js"></script>
+        <link rel="stylesheet" type="text/css" href="http://www.x3dom.org/download/1.7/x3dom.css" />
+        <link rel="stylesheet" href="origami.css" />
+        <base target="_self" /> 
+    </head>
+    <body>
+        <div id="nav">
+            <ul>
+                <li><a href="#header">Home</a></li>
+                <li>Paper Representations <ul>
+                    <li><a href="#side_color">Side Color</a></li>
+                    <li><a href="#crease">Crease</a></li>
+                    <li><a href="#invisible_line">Invisible Line</a></li>
+                </ul>
+                </li>
+                <li><a href="Operations_Yoshizawa-Randlett-System.html">Operations</a></li>
+                <li><a href="Views_Yoshizawa-Randlett-System.html">Views</a></li>
+                <li><a href="Compond_Folds_Yoshizawa-Randlett-System.html">Compound folds</a></li>
+                <li><a href="Compond_Folds_Yoshizawa-Randlett-System.html#Paper_Crane">Complete Example(Paper Crane)</a></li>
+            </ul>
+        </div>
+        <div id="header">
+            <h1>Origami 3D Animation</h1>
+        </div>
+        <div id="use_directions">
+            <h1>Welcome in Origami with 3D Animation</h1>
+            <p>Use directions:</p>
+            <ul>
+                <li>You can select any 3D Animation from the navigator in the right side.</li>
+                <li>You can navigate in 3D scene with mouse freely,by which you can observe the
+                    model from any direction.</li>
+                <li>You can change the field of view in 3D scene by rotating mousewheel forwards or
+                    backwords.</li>
+                <li>At some 3D scenes you can click the buttons below, which stand for appropriate
+                    observation positions the author suggests.</li>
+            </ul>
+            <p>Copy right:</p>
+            <ul>
+                <li>All the two-dimensional pictures(diagrams in Yoshizawa-Randlett-System) come from https://commons.wikimedia.org/wiki/Main_Page.</li>
+                <li>All the X3D scenes and the design of website belong to the author.</li>
+            </ul>
+        </div>
+        <div id="section">   
+            <div id="side_color">
+                <br />
+                <h1>Side Color-2D Diagram</h1>
+                <img src="images/Origami_symbol_side_color.png"/>
+                <h1>Side Color-3D Animation</h1>
+                <x3d>
+                    <Scene>
+                        <!-- predifine the viewpoint of the observation -->
+                        <Viewpoint description="default_camera" position="0 6 6" orientation="-1 0 0 0.7854" ></Viewpoint>
+                        <!-- define the components --> 
+                        <Shape>
+                            <!-- specify the appearance of the component -->
+                            <Appearance>
+                                <TwoSidedMaterial separateBackColor="true" diffuseColor="0.9 0.9 0.6" backDiffuseColor="0.1 0.1 0.9" transparency="0.1"></TwoSidedMaterial>
+                            </Appearance>
+                            <!-- describe the component with point coordinates -->
+                            <IndexedFaceSet solid="false" coordIndex="0 1 2 3 4 0 -1">
+                                <Coordinate point="1 0 2  2 0 1  2 0 -2  -2 0 -2  -2 0 2"></Coordinate> 
+                            </IndexedFaceSet>
+                        </Shape>
+                        <Shape>
+                            <Appearance>
+                                <TwoSidedMaterial separateBackColor="true" diffuseColor="0.1 0.1 0.9" backDiffuseColor="0.9 0.9 0.6"  transparency="0.1"></TwoSidedMaterial>
+                            </Appearance>
+                            <IndexedFaceSet solid="false" coordIndex="0 1 2 0 -1">
+                                <Coordinate point="1 0 2  2 0 1  1 0.01 1"></Coordinate> 
+                            </IndexedFaceSet>
+                        </Shape>
+                    </Scene>
+                </x3d>
+            </div>     
+            <div id="crease">
+                <br />
+                <h1>Crease-2D Diagram</h1>
+                <img src="images/Orisymbol_crease.png"/>
+                <h1>Crease-3D Animation</h1>
+                <x3d>
+                    <Scene>
+                        <!-- predifine the viewpoint of the observation -->
+                        <Viewpoint id="default" description="default_cam" position="0 6 6" orientation="-1 0 0 0.7854" ></Viewpoint>
+                        <!-- define the components and label them with DEFs  --> 
+                            <Shape>
+                                <!-- specify the appearance of the component -->
+                                <Appearance>
+                                    <TwoSidedMaterial separateBackColor="true" diffuseColor="0.9 0.9 0.6" backDiffuseColor="0.1 0.1 0.9" transparency="0.1"></TwoSidedMaterial>
+                                </Appearance>
+                                <!-- describe the component with point coordinates -->
+                                <IndexedFaceSet solid="false" coordIndex="0 1 2 3 -1">
+                                    <Coordinate point="2 0 2  2 0 -2  -2 0 -2  -2 0 2"></Coordinate> 
+                                </IndexedFaceSet>
+                            </Shape>
+                            <!-- describe the fold line with point coordinates -->
+                            <Shape>
+                                <IndexedLineSet coordIndex="0 1 -1">
+                                    <Coordinate point="1 0.01 -2  -2 0.01 1"></Coordinate>
+                                </IndexedLineSet>
+                                <!-- specify the properties of the lines -->
+                                <Appearance>
+                                    <Material emissiveColor="0.2 0.2 0.2"/> 
+                                    <LineProperties linetype="1" containerField="lineProperties">
+                                    </LineProperties>
+                                </Appearance>
+                            </Shape>
+                    </Scene>
+                </x3d>
+            </div>
+            <div id="invisible_line">
+                <br />
+                <h1>Invisible Line-2D Diagram</h1>
+                <img src="images/Orisymbol_invisible_line.png"/>
+                <h1>Invisible Line-3D Animation</h1>
+                <x3d>
+                    <Scene>
+                        <!-- predifine the viewpoint of the observation -->
+                        <Viewpoint id="default" description="default_cam" position="0 5 0" orientation="-1 0 0  1.58" ></Viewpoint>
+                        <!-- define the components and label them with DEFs  --> 
+                        <Transform DEF="part1">
+                            <Shape>
+                                <!-- specify the appearance of the component -->
+                                <Appearance DEF="AP">
+                                    <TwoSidedMaterial transparency="0.1" separateBackColor="true" diffuseColor="0.9 0.9 0.6" backDiffuseColor="0.1 0.1 0.9"></TwoSidedMaterial>
+                                </Appearance>
+                                <!-- describe the component with point coordinates -->
+                                <IndexedFaceSet solid="false" coordIndex="0 1 2 5 -1">
+                                    <Coordinate DEF="points" point="0 0 2  2 0 0  0.5 0 -1.5  1.21 0.01 -1.5  1.21 0.01 1.5 -0.5 0 1.5"></Coordinate> 
+                                </IndexedFaceSet>
+                            </Shape>
+                            <Shape>
+                                <!-- reference the appearance characters defined above -->
+                                <Appearance USE="AP"></Appearance>
+                                <!-- reference the point coordinates defined above to describe the component-->
+                                <IndexedFaceSet solid="true" coordIndex="2 3 4 5 -1">
+                                    <Coordinate USE="points"></Coordinate>
+                                </IndexedFaceSet>
+                            </Shape>   
+                            <Shape>
+                                <IndexedLineSet coordIndex="0 1 -1 2 3 -1">
+                                    <Coordinate point="0.5 0 -1.5  1.21 0.02 -0.79  0.5 0.01 1.5  1.21 0.02 0.79"></Coordinate>
+                                </IndexedLineSet> 
+                                <Appearance>
+                                    <Material emissiveColor="0.4 0.4 0.4"/> 
+                                    <LineProperties linetype="2" containerField='lineProperties'>
+                                    </LineProperties>
+                                </Appearance>
+                            </Shape>
+                        </Transform>
+                    </Scene>
+                </x3d>
+            </div>
+        </div>
+        <div id="footer"> Copyright(C)Bachelor Thesis-Project from Jindong Gu in Uni Wuppertal
+        </div>
+    </body>
+</html>

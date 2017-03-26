@@ -1,0 +1,54 @@
+#header{
+    width:1100px;
+    background-color:rgba(0, 0, 0, 1);
+    color:white;
+    text-align:center;
+    padding:5px;
+    margin:0px 300px;
+}
+body{
+    background-color:#f1fafa;
+}
+input{
+    width:85px;
+    height:25px;
+}
+x3d{
+    width:500px;
+    height:300px;
+    margin:0px 0px 10px 0px;
+}
+#nav{
+    color:#0000ee;
+    position:fixed;
+    border-style:solid;
+    border-width:1px;
+    border-color:#666666;
+    line-height:20px;
+    background-color:rgba(200, 0, 0, 0.01);
+    height:580px;
+    width:300px;
+    float:left;
+    padding:40px 0px 0px 0px;
+}
+#section{
+    width:450px;
+    float:left;
+    padding:70px 0px 70px 450px;
+}
+#section > div{
+    margin:100px 0px 500px 0px;
+}
+#use_directions{
+     padding:100px 0px 200px 400px;
+    font-size:120%;
+    line-height:200%;   
+}
+#footer{
+    background-color:black;
+    color:white;
+    clear:left;
+    text-align:center;
+    padding:5px;
+    font-size:50%;
+}
